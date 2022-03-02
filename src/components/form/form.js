@@ -27,7 +27,7 @@ export default function Form({ show, handleShow, setSuccess, setErro }) {
   const onSubmit = async (values) => {
     const { confirmPassword, ...data } = values;
 
-    const response = api.post("/user", data).catch((err) => {
+    const response = await api.post("/user", data).catch((err) => {
       if (err && err.response) setErro(err.response.data.message);
       setSuccess(null);
     });
