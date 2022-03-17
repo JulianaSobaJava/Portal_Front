@@ -12,6 +12,10 @@ export const Wrapper = styled.div`
   background-size: 100%;
   display: flex;
   align-items: center;
+
+    @media (min-width: 360px) {
+         width:360px;
+  }
 `;
 
 export const Text = styled.div`
@@ -109,10 +113,10 @@ export const FilterOPtions = styled.div`
 
 export const FiltersGroups = styled.div`
   background: ${(props) =>
-    props.click ? "var(--main-color)" : "rgba(2, 7,28,0.4)"};
+    props.click ? "rgba(0, 0,0,0.2)" : "rgba(2, 7,28,0.4)"};
   position: relative;
   height: 40px;
-  margin: ${(props) => (props.click ? ".8em .2em" : ".8em")};
+  margin: ${(props) => (props.click ? ".8em .2em" : ".8em .2em")};
   border-radius: 20px;
   padding: 0.2em 0.6em;
   display: flex;

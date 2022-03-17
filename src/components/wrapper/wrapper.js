@@ -5,7 +5,8 @@ import mainImage from "../../assets/image/mainImage.jpg";
 const WrapperContainer = styled.div`
   width: 100%;
   height: 50vh;
-  background-image: url(${mainImage});
+  background-image: linear-gradient(rgba(4, 4, 20, 0.5), rgba(4, 4, 20, 0.5)),
+    url(${mainImage});
   display: flex;
   justify-content: center;
   align-items: center;

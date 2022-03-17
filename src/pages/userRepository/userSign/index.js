@@ -15,6 +15,7 @@ export default function Sign({ setView }) {
   return (
     <style.Container>
       <style.FirstColumn>
+        <style.LinkLogo to="/">Logo</style.LinkLogo>
         <h3>Seja Bem-Vindo de Volta</h3>
         <p>Para continuar</p>
         <p>por favor faça login aqui!</p>

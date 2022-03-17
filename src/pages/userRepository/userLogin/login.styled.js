@@ -48,8 +48,8 @@ export const FirstColumn = styled.div`
 `;
 export const SecondColumn = styled.div`
   width: 60%;
-  position:relative;
   left:-40%;
+  position:relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -84,9 +84,34 @@ export const SecondColumn = styled.div`
     }
     
 `;
+export const LinkLogo = styled(Link)`
+  position: absolute;
+  left: 80%;
+  bottom: 300%;
+  z-index: 8;
+  font-size: 50px;
+  cursor: pointer;
+  color: var(--white-color);
+`;
 
 export const LinkP = styled(Link)`
   margin: 1em 0px;
   font-size: 16px;
   color: #000;
+`;
+export const SuccessMessage = styled.span`
+  text-align: center;
+  color: #00bb00;
+  background-color: #bbffbe;
+  padding: 6px;
+  border-radius: 4px;
+  display: none;
+`;
+export const ErrorMessage = styled.span`
+  text-align: center;
+  color: #ff0000;
+  background-color: #ffbbbb;
+  padding: 6px;
+  border-radius: 4px;
+  display: none;
 `;

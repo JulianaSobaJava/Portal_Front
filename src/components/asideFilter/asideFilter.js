@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as Icons from "react-icons/fa";
-import * as style from "../../pages/searchSchool/asideFilter.styled";
-import { filters } from "./dataAsideFilter";
+import * as style from "./asideFilter.styled";
+import { filters } from "../../helpers/data/dataAsideFilter";
 
 export default function AsideFilter() {
   const [isExpanded, setClickShow] = useState(false);
@@ -19,7 +19,7 @@ export default function AsideFilter() {
         {filters.map((filter, index) => (
           <style.FilterContent key={index}>
             <style.FilterButtonAside onClick={() => toggle(index)} key={index}>
-              <h3>{filter.title}</h3>
+              <h4>{filter.title}</h4>
               {isExpanded ? <Icons.FaAngleDown /> : <Icons.FaAngleRight />}
             </style.FilterButtonAside>
             {filter.type === "text" && (

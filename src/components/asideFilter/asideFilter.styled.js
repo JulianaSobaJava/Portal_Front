@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const AsideFilterContainer = styled.aside`
-  width: 38%;
+  width: 30%;
   height: 100%;
 `;
 
@@ -69,12 +69,10 @@ export const FilterOptionsCheckBox = styled.div`
 `;
 
 export const TextField = styled.input`
-    width: 100%;
-    height: 100%;
-    padding:2%;
-    border: 1px solid var(--grey-text-color),
-     `;
-     
-export const Checkbox = styled.input`
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+  border: 1px solid var(--grey-text-color);
+`;
 
-`
+export const Checkbox = styled.input``;

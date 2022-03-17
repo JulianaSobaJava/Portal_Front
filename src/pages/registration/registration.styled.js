@@ -2,11 +2,13 @@ import styled, { css, keyframes } from "styled-components";
 
 export const RegistrationContainer = styled.div`
   height: 100vh;
+  positiion: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
+
 const slideIn = keyframes`
   from{
       left: 0;
@@ -67,6 +69,7 @@ export const Content = styled.div`
   border-radius: 15px;
   width: 94%;
   display: flex;
+  border: 0.5px solid #ecf0f1;
 
   @media (max-width: 900px) {
     height: 100%;

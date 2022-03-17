@@ -23,20 +23,17 @@ const initialValues = {
   municipe: "",
   street: "",
 };
-export default function Form({ show, handleShow, setSuccess, setErro }) {
+export default function Form({ show, handleShow }) {
   const onSubmit = async (values) => {
-    const { confirmPassword, ...data } = values;
+    const { confirmPassword, ...dataUser } = values;
+    console.log(dataUser);
 
-    const response = api.post("/user", data).catch((err) => {
-      if (err && err.response) setErro(err.response.data.message);
-      setSuccess(null);
-    });
-
-    if (response && response.data) {
-      setErro(null);
-      setSuccess(response.data.message);
-      formik.resetForm();
-    }
+    await api
+      .post("/user", dataUser)
+      .then(async (response) => await api.post("/endereco"))
+      .catch(({ response }) =>
+        console.log("Response dê Error ou UnSucess => ", response)
+      );
   };
 
   const formik = useFormik({
@@ -45,8 +42,6 @@ export default function Form({ show, handleShow, setSuccess, setErro }) {
     onSubmit,
     validationSchema: validationSchema,
   });
-
-  console.log("error", formik.errors);
   return (
     <>
       <FormikForm onSubmit={formik.handleSubmit}>
@@ -220,7 +215,7 @@ export default function Form({ show, handleShow, setSuccess, setErro }) {
           </Error>
         </FormGroup>
 
-        <button type="submit">Register</button>
+        <button type="submit">Criar conta</button>
       </FormikForm>
     </>
   );

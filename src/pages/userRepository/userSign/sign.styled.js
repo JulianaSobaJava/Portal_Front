@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100%;
@@ -13,7 +14,6 @@ export const Container = styled.div`
 export const FirstColumn = styled.div`
   text-align: center;
   width: 40%;
-  position: relative;
   z-index: ${(props) => (props.animatioContent ? "11" : "11")};
   p {
     font-size: 14px;
@@ -64,6 +64,14 @@ export const SecondColumn = styled.div`
     font-weight: 300;
     line-height: 20px;
   }
+`;
+export const LinkLogo = styled(Link)`
+  position: absolute;
+  left: 1%;
+  top: 2%;
+  font-size: 50px;
+  cursor: pointer;
+  color: var(--white-color);
 `;
 export const SuccessMessage = styled.span`
   text-align: center;
