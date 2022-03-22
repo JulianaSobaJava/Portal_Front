@@ -12,10 +12,6 @@ export const Wrapper = styled.div`
   background-size: 100%;
   display: flex;
   align-items: center;
-
-    @media (min-width: 360px) {
-         width:360px;
-  }
 `;
 
 export const Text = styled.div`
@@ -25,7 +21,7 @@ export const Text = styled.div`
   display:flex;
   flex-direction:column;
   position:relative;
-  top:12%;
+  top:2%;
   justify-content: center;
   align-items: center;
   text-align: center;

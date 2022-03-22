@@ -16,11 +16,6 @@ export const Header = styled.header`
   color: var(--black-color);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);  
   `}
-
-  @media (min-width: 360px) {
-   width:100%;
-   overflow-X
-  }
 `;
 
 export const Navbar = styled.nav`
@@ -137,10 +132,6 @@ export const FaBar = styled(Icons.FaBars)`
     font-size: 1.4em;
     cursor: pointer;
   }
-    @media (min-width: 360px) {
-    display: block;
-   background:#fff;
-  }
 `;
 
 export const FaTime = styled(Icons.FaTimes)`
@@ -154,8 +145,7 @@ export const FaTime = styled(Icons.FaTimes)`
     cursor: pointer;
   }
 
-  @media (min-width: 360px) {
+  @media (max-width: 360px) {
     display: block;
-   background:#fff;
   }
 `;
