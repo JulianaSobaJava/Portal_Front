@@ -41,7 +41,6 @@ const Image = styled.div`
   align-items: left;
   padding: 1em 0;
   margin-bottom: 1em;
-  background: var(--main-color);
 
   img {
     height: 80%;

@@ -1,0 +1,97 @@
+import { createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle`
+:root{
+    --main-color:#2ed4d9;
+    --primaryColor: #155377;
+    --white-color:#fff;
+    --grey-text-color:#999c9e;
+    --grey-background:#f3f3f3;
+    --grey-background-second:#f8f8f8;
+    --black-color:#000;
+    --grey-dark:#4a4a4a;;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+html{
+        height: 100%;
+    @media(max-width:1080){
+        font-size: 93.75%;
+    }
+
+      @media(max-width:720){
+        font-size: 87.5%;
+    }
+}
+
+body, input, textarea, button {
+    font-family: 'Poppins', sans-serif;
+    font-weight:400;
+}
+
+h1,h2,h3,h4,h5,h6, strong{
+    font-weight:600;
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    background:var(--background);
+    --webkit-font-smoothing: antialiased;
+  
+ 
+}
+
+button{
+    cursor:pointer;
+}
+
+.react-modal-overlay{
+  background:rgba( 0, 0, 0, 0.5 );
+
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+   right:0;
+   z-index:10;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow: hidden;
+}
+
+.react-modal-content {
+  width:100%;
+  max-width:576px;
+  background:var(--background);
+  position:relative;
+  padding:3rem;
+  border-radius:0.2rem;
+}
+
+.react-modal-close{
+    position:absolute;
+    border:0;
+    right:1.5rem;
+    top:1.5rem;
+    background:transparent;
+    transition: filter .2s;
+
+    &:hover{
+        filter:brightness(0.8);
+    }
+}
+`;

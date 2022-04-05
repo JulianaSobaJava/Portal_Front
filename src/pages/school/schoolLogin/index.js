@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Container from "../../../components/container/container";
+import Container from "../../../components/container/index";
 import * as style from "./schoolLogin.styled";
 import * as Icons from "react-icons/md";
 import { useFormik } from "formik";
@@ -9,7 +9,7 @@ import {
   FieldInput,
   Error,
   FormGroup,
-} from "../../../components/form/form.styed";
+} from "../../../components/form/style";
 import { sessionValidator } from "../../../validations/userValidation";
 
 // import { Container } from './styles';

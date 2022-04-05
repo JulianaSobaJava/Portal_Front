@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import Container from "../../components/container/container";
-import Wrapper from "../../components/wrapper/wrapper";
-import AsideFilter from "../../components/asideFilter/asideFilter";
-import GridView from "../../components/gridView/gridView";
-import MapaView from "../../components/mapaView/mapaView";
+import Container from "../../components/container/index";
+import Wrapper from "../../components/wrapper";
+import AsideFilter from "../../components/asideFilter";
+import GridView from "../../components/gridView";
+import MapaView from "../../components/mapaView";
 import { schools } from "../../helpers/data/schools";
 import * as Icons from "react-icons/fa";
 import * as style from "./searchSchool.styled";
-import NavBar from "../../components/navBar/navbar";
-import Footer from "../../components/footer/footer";
+import NavBar from "../../components/navBar/index";
+import Footer from "../../components/footer";
 
 // import { Container } from './styles';
 
