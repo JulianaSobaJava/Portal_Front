@@ -34,8 +34,6 @@ export const validationSchema = Yup.object().shape({
 });
 
 export const sessionValidator = Yup.object().shape({
-  username: Yup.string()
-    .matches(/^[aA-zZ-Z\s]+$/, "Apenas letras")
-    .required("O nome completo é obrigatório"),
+  telefone: Yup.string(),
   password: Yup.string().required("Obrigatório"),
 });

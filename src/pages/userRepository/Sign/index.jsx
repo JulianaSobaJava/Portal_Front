@@ -4,8 +4,6 @@ import Form from "../../../components/form/index";
 import { ModalContext } from "../../../contexts/ModalContext";
 
 export default function Sign() {
-  const [success, setSuccess] = useState(null);
-  const [erro, setError] = useState(null);
   const [show, setShow] = useState(false);
 
   const { handleOpenModal } = React.useContext(ModalContext);
@@ -26,14 +24,7 @@ export default function Sign() {
       <style.SecondColumn>
         <h3>Criar Conta</h3>
         <p>Use um email para fazer o seu cadastro</p>
-        <Form
-          show={show}
-          handleShow={handleShow}
-          erro={erro}
-          success={success}
-          setSuccess={setSuccess}
-          setError={setError}
-        />
+        <Form show={show} handleShow={handleShow} />
       </style.SecondColumn>
     </style.Container>
   );

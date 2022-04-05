@@ -30,7 +30,7 @@ export const FormikForm = styled.form`
   align-items: center;
   flex-direction: column;
   width: 55%;
-  height: 90%;
+  height: 98%;
   position: relative;
 
   button {

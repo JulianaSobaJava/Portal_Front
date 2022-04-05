@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import {
   AllInput,
-  FormikForm,
   FieldInput,
   Error,
   FormGroup,
@@ -11,16 +10,17 @@ import * as Icons from "react-icons/md";
 import { sessionValidator } from "../../../validations/userValidation";
 import * as style from "./style";
 import { api } from "../../../config/axios";
+import { ModalContext } from "../../../contexts/ModalContext";
 
 const initialValues = {
-  username: "",
+  telefone: "",
   password: "",
 };
 
 export default function Login() {
   const [show, setShow] = useState(false);
-  const [erro, setErro] = useState(null);
-  const [success, setSuccess] = useState(null);
+
+  const { handleCloseModal } = React.useContext(ModalContext);
 
   const handleShow = (e) => {
     e.preventDefault();
@@ -28,28 +28,33 @@ export default function Login() {
   };
 
   const onSubmit = async (values) => {
-    setErro(null);
-    const response = await api.post("/session", values).catch((err) => {
-      if (err && err.response) setErro(err.response.data.message);
-      setSuccess(null);
-    });
-    if (response) {
-      alert("Welcome back");
-    }
-    // let newLogin;
-    // await api
-    //   .post("login", {
-    //     password: await dataUser.password,
-    //     contactId: await newContacto.id,
-    //   })
-    //   .then((response) => {
-    //     console.log("novo login adicionado", response.data);
-    //     newContacto = response.data;
-    //   })
-    //   .catch((error) => {
-    //     console.log("erro ao cadastrar o login:", error);
-    //   });
+    const { telefone, password } = values;
+
+    let newToken;
+    await api
+      .post("session", {
+        contact: telefone,
+        password,
+      })
+      .then((response) => {
+        console.log("session start", response.data);
+        newToken = response.data;
+        formik.resetForm();
+        handleCloseModal();
+      })
+      .catch((error) => {
+        if (!error?.response) {
+          console.log("No server response");
+        } else if (error.response?.status === 400) {
+          console.log("Missing Username or Password");
+        } else if (error.response?.status === 401) {
+          console.log("Unauthorized");
+        } else {
+          console.log("Login Failed");
+        }
+      });
   };
+
   const formik = useFormik({
     initialValues: initialValues,
     validateOnBlur: true,
@@ -57,44 +62,42 @@ export default function Login() {
     validationSchema: sessionValidator,
   });
 
-  console.log("error", formik.errors);
   return (
     <style.Container>
       <style.FirstColumn>
-        <style.LinkLogo to="/">Logo</style.LinkLogo>
         <h3>Olá, Amigo!</h3>
-        <p>Embarque nessa jornada, e</p>
-        <p>encontre a escola e o curso,</p>
-        <p>que melhor combinam consigo aqui</p>
-        <p>Crie a sua conta agora!</p>
+        <p>
+          Embarque nessa jornada,
+          <br />e encontre a escola e o curso,
+          <br />
+          que melhor combinam consigo
+          <br />
+          Crie a sua conta agora!
+        </p>
 
-        <button>Criar Conta</button>
+        <style.LinkButton to="/cadastrar" onClick={handleCloseModal}>
+          Criar Conta
+        </style.LinkButton>
       </style.FirstColumn>
       <style.SecondColumn>
-        {!erro && (
-          <style.SuccessMessage>{success ? success : ""}</style.SuccessMessage>
-        )}
-        {!success && (
-          <style.ErrorMessage>{erro ? erro : ""}</style.ErrorMessage>
-        )}
         <h3>Fazer Login</h3>
-        <FormikForm onSubmit={formik.handleSubmit}>
+        <style.FormikForm onSubmit={formik.handleSubmit}>
           <FormGroup>
             <AllInput>
-              <Icons.MdOutlinePersonOutline />
+              <Icons.MdOutlinePhoneIphone />
               <FieldInput
                 type="text"
-                placeholder="Email"
-                name="username"
-                value={formik.values.username}
+                placeholder="Telefone"
+                name="telefone"
+                value={formik.values.telefone}
                 onChange={formik.handleChange}
                 autocomplete="off"
                 onBlur={formik.handleBlur}
               />
             </AllInput>
             <Error>
-              {formik.touched.username && formik.errors.username
-                ? formik.errors.username
+              {formik.touched.telefone && formik.errors.telefone
+                ? formik.errors.telefone
                 : ""}
             </Error>
           </FormGroup>
@@ -127,7 +130,7 @@ export default function Login() {
 
           <style.LinkP to="#">Esqueceu a senha?</style.LinkP>
           <button type="submit">Entrar</button>
-        </FormikForm>
+        </style.FormikForm>
       </style.SecondColumn>
     </style.Container>
   );

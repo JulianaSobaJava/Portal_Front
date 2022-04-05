@@ -49,7 +49,6 @@ li{
 body{
     background:var(--background);
     --webkit-font-smoothing: antialiased;
-  
  
 }
 
@@ -75,8 +74,10 @@ button{
 
 .react-modal-content {
   width:100%;
-  max-width:576px;
-  background:var(--background);
+  height: 100vh;
+  max-width:800px;
+  max-height:700px;
+  background:var(--white-color);
   position:relative;
   padding:3rem;
   border-radius:0.2rem;
@@ -84,14 +85,15 @@ button{
 
 .react-modal-close{
     position:absolute;
+    z-index: 12;
     border:0;
-    right:1.5rem;
+    left:110%;
     top:1.5rem;
     background:transparent;
     transition: filter .2s;
 
     &:hover{
-        filter:brightness(0.8);
+        filter:brightness(0.1);
     }
 }
 `;

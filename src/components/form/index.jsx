@@ -104,8 +104,14 @@ export default function Form({ show, handleShow }) {
         newUser = response.data;
       })
       .catch((err) => {
-        if (err && err.response)
+        if (err && !err?.response) {
+          console.log("Server Response");
+        } else if (err.response.status === 409) {
+          console.log("Username taken");
+        } else {
+          console.log("Registration Failed");
           console.log("Erro cadastrar o user:", err.response.data.message);
+        }
       });
 
     let newContacto;

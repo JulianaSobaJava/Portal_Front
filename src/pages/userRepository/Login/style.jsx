@@ -6,21 +6,30 @@ export const Container = styled.div`
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  position: absolute;
+
+  &:before {
+    content: " ";
+    z-index: 4;
+    width: 50%;
+    height: 100%;
+    left: 66%;
+    position: absolute;
+    background-color: var(--main-color);
+  }
 `;
 export const FirstColumn = styled.div`
   text-align: center;
   width: 40%;
   position: relative;
-  left: 60%;
+  left: 80%;
   z-index: ${(props) => (props.animatioContent ? "-1" : "11")};
   p {
     font-size: 14px;
     font-weight: 300;
     line-height: 20px;
     color: #fff;
+    margin-bottom: 20px;
   }
 
   h3 {
@@ -29,26 +38,24 @@ export const FirstColumn = styled.div`
     font-weight: bold;
     color: #fff;
   }
+`;
 
-  button {
-    width: 10em;
-    margin: 0 8px;
-    padding: 10px 8px;
-    color: var(--white-color);
-    border: 1px solid var(--white-color);
-    text-align: center;
-    transition: 0.5s ease-in-out;
-    background-color: transparent;
+export const LinkButton = styled(Link)`
+  width: 10em;
+  padding: 10px 8px;
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
+  text-align: center;
+  transition: 0.5s ease-in-out;
 
-    &:hover {
-      color: var(--main-color);
-      background: var(--white-color);
-    }
+  &:hover {
+    color: var(--main-color);
+    background: var(--white-color);
   }
 `;
 export const SecondColumn = styled.div`
-  width: 60%;
-  left: -40%;
+  width: 100%;
+  left: -34%;
   position: relative;
   display: flex;
   align-items: center;
@@ -99,19 +106,13 @@ export const LinkP = styled(Link)`
   font-size: 16px;
   color: #000;
 `;
-export const SuccessMessage = styled.span`
-  text-align: center;
-  color: #00bb00;
-  background-color: #bbffbe;
-  padding: 6px;
-  border-radius: 4px;
-  display: none;
-`;
-export const ErrorMessage = styled.span`
-  text-align: center;
-  color: #ff0000;
-  background-color: #ffbbbb;
-  padding: 6px;
-  border-radius: 4px;
-  display: none;
+
+export const FormikForm = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 96%;
+  height: 98%;
+  position: relative;
 `;
