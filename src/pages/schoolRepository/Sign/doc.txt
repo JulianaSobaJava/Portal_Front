@@ -1,0 +1,21 @@
+   <div className="mainSignSchoolContainer">
+         
+          <div className="mainSignForm">
+            
+            <div className="signSecondContent">
+              <form className="form-school" method="Post">
+                <div className="infoGest">
+                  <div className="info">
+                    <h4>Criar Login de Admin</h4>
+                    <p>
+                      Olá, para começar a utilizar a área de gestor precisas
+                      criar sua conta.
+                    </p>
+                  </div>
+                </div>
+                <hr />
+             
+              </form>
+            </div>
+          </div>
+        </div>

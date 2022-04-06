@@ -1,4 +1,5 @@
 import React from "react";
+import { AuthContext } from "../../contexts/AuthProvider";
 import { ModalContext } from "../../contexts/ModalContext";
 import { NavItems } from "../../helpers/data/NavItems";
 
@@ -9,6 +10,9 @@ export default function NavBar() {
   const [colorNav, setColorNav] = React.useState(true);
 
   const { handleOpenModal } = React.useContext(ModalContext);
+  const { auth } = React.useContext(AuthContext);
+
+  console.log("token da bwé", auth.token);
 
   const handleClick = () => {
     setClick(!click);
@@ -44,15 +48,19 @@ export default function NavBar() {
                 </li>
               );
             })}
-            <li>
-              <style.ButtonLogin color={colorNav} onClick={handleOpenModal}>
-                Fazer Login
-              </style.ButtonLogin>
-            </li>
+            {!auth.token ? (
+              <li>
+                <style.ButtonLogin color={colorNav} onClick={handleOpenModal}>
+                  Fazer Login
+                </style.ButtonLogin>
+              </li>
+            ) : (
+              <span>{auth.userName.split(" ")[0]}</span>
+            )}
             <li>
               <style.NavLinkRegist
                 color={colorNav}
-                to="/registrationSchool"
+                to="/cadastrarEscola"
                 onClick={handleClick}
               >
                 Cadastrar Escola

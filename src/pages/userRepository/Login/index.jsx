@@ -11,6 +11,7 @@ import { sessionValidator } from "../../../validations/userValidation";
 import * as style from "./style";
 import { api } from "../../../config/axios";
 import { ModalContext } from "../../../contexts/ModalContext";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const initialValues = {
   telefone: "",
@@ -21,6 +22,7 @@ export default function Login() {
   const [show, setShow] = useState(false);
 
   const { handleCloseModal } = React.useContext(ModalContext);
+  const { setAuth } = React.useContext(AuthContext);
 
   const handleShow = (e) => {
     e.preventDefault();
@@ -30,24 +32,28 @@ export default function Login() {
   const onSubmit = async (values) => {
     const { telefone, password } = values;
 
-    let newToken;
     await api
       .post("session", {
         contact: telefone,
         password,
       })
       .then((response) => {
-        console.log("session start", response.data);
-        newToken = response.data;
+        console.log("session start", response?.data);
+        const userName = response?.data?.user.name;
+        const role = response?.data?.user.roleId.id;
+        const roleName = response?.data?.user.roleId.descricao;
+        const token = response?.data?.token;
+        setAuth({ userName, role, roleName, token });
+        console.log(userName, role, roleName, token);
         formik.resetForm();
         handleCloseModal();
       })
       .catch((error) => {
         if (!error?.response) {
           console.log("No server response");
-        } else if (error.response?.status === 400) {
+        } else if (error?.response?.status === 400) {
           console.log("Missing Username or Password");
-        } else if (error.response?.status === 401) {
+        } else if (error?.response?.status === 401) {
           console.log("Unauthorized");
         } else {
           console.log("Login Failed");
