@@ -7,9 +7,10 @@ export const GoToLogin = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 14vh;
-  margin-bottom: 0.6em;
+  margin-bottom: 0.2em;
   position: relative;
   color: var(--main-color);
+  padding-top: 1%;
 
   span {
     height: 100%;

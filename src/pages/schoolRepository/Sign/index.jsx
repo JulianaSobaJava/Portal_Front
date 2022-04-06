@@ -1,25 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Container from "../../../components/container/index";
 
 import * as S from "./style";
 import Link from "./views/link";
-import FormSchool from "./views/formSchool";
 import Info from "./views/Info";
+import Form from "./views/Form/index";
 
 export default function RegistrationSchool() {
-  const [show, setShow] = useState("false");
-  const handleShow = (e) => {
-    e.preventDefault();
-    setShow(!show);
-  };
   return (
     <Container>
       <S.Content>
-        <Link />
+        <Link to="/loginSchool" h4="Fazer Login" />
         <S.FormContent>
           <Info />
-          <FormSchool />
+          <S.FormUser>
+            <Form />
+          </S.FormUser>
         </S.FormContent>
       </S.Content>
     </Container>

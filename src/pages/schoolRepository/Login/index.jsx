@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Container from "../../../components/container/index";
-import * as style from "./schoolLogin.styled";
+import * as style from "./style";
 import * as Icons from "react-icons/md";
 import { useFormik } from "formik";
 import {
@@ -11,13 +11,15 @@ import {
   FormGroup,
 } from "../../../components/form/style";
 import { sessionValidator } from "../../../validations/userValidation";
+import image from "../../../assets/image/login.png";
+import Link from "../Sign/views/link/index";
 
-// import { Container } from './styles';
 const initialValues = {
   username: "",
   password: "",
 };
-export default function ShoolLogin() {
+
+export default function SchoolLogin() {
   const [show, setShow] = useState(false);
 
   const handleShow = (e) => {
@@ -38,6 +40,7 @@ export default function ShoolLogin() {
 
   return (
     <Container>
+      <Link to="/" h4="Portal das escolas" />
       <style.MainSection>
         <style.Text>
           <h2>Área do gestor</h2>
@@ -107,9 +110,9 @@ export default function ShoolLogin() {
             Utilize nossos serviços gratuitos para aprimorar sua gestão escolar
           </p>
           <div>
-            <img src="" alt="" />
+            <img src={image} alt="imag" />
           </div>
-          <style.LinkButton to="/about">Criar Conta</style.LinkButton>
+          <style.LinkButton to="/cadastrarEscola">Criar Conta</style.LinkButton>
         </style.Sign>
       </style.MainSection>
     </Container>

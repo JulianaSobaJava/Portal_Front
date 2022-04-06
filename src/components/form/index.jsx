@@ -98,6 +98,7 @@ export default function Form({ show, handleShow }) {
         name: dataUser.username,
         dateBorn: dataUser.dateBorn,
         bi: dataUser.bi,
+        roleId: "0e734883-454b-47c6-b7f5-d570e5acd189",
       })
       .then((response) => {
         console.log("novo usuario", response.data);
@@ -136,14 +137,13 @@ export default function Form({ show, handleShow }) {
       .then((response) => {
         console.log("novo login adicionado", response.data);
         newContacto = response.data;
+        formik.resetForm();
+        alert("Usuario Cadastrado com sucesso");
+        handleOpenModal();
       })
       .catch((error) => {
         console.log("erro ao cadastrar o login:", error);
       });
-
-    formik.resetForm();
-    alert("Usuario Cadastrado com sucesso");
-    handleOpenModal();
   };
 
   const formik = useFormik({

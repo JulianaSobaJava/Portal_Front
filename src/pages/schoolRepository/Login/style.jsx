@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 
 export const MainSection = styled.section`
   width: 100%;
-  height: 90vh;
-  padding-top: 10%;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,8 +85,13 @@ export const Sign = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--white-color);
     margin-bottom: 30px;
+    position: relative;
+
+    img {
+      width: 250px;
+      height: 250px;
+    }
   }
 `;
 export const LinkP = styled(Link)`
