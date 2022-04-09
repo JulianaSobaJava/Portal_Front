@@ -11,7 +11,7 @@ import { sessionValidator } from "../../../validations/userValidation";
 import * as style from "./style";
 import { api } from "../../../config/axios";
 import { ModalContext } from "../../../contexts/ModalContext";
-import { AuthContext } from "../../../contexts/AuthProvider";
+import { useAuth } from "../../../hooks/useAuth";
 
 const initialValues = {
   telefone: "",
@@ -22,7 +22,7 @@ export default function Login() {
   const [show, setShow] = useState(false);
 
   const { handleCloseModal } = React.useContext(ModalContext);
-  const { setAuth } = React.useContext(AuthContext);
+  const { setAuth } = useAuth();
 
   const handleShow = (e) => {
     e.preventDefault();
