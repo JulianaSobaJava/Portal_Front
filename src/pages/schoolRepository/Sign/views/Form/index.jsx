@@ -4,7 +4,7 @@ import * as S from "./style";
 import { validationSchema } from "../../../../../validations/userValidation";
 import * as Icons from "react-icons/md";
 import { AiOutlineIdcard } from "react-icons/ai";
-import { api } from "../../../../../config/axios";
+import { api } from "../../../../../services/axios";
 import { initialValues, TypeOfSchool } from "../../data";
 
 export default function Form({ show, handleShow }) {

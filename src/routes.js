@@ -9,7 +9,6 @@ import Page404 from "./pages/page404/index";
 import RegistrationSchool from "./pages/schoolRepository/Sign/index";
 import SchoolLogin from "./pages/schoolRepository/Login/index";
 import Sign from "./pages/userRepository/Sign/index";
-import { RequireAuth } from "./services/RequireAuth";
 
 export default function MainRoutes() {
   return (
@@ -21,11 +20,8 @@ export default function MainRoutes() {
       <Route path="/instructor" element={<Instructor />} />
       <Route path="/about" element={<About />} />
       <Route path="*" element={<Page404 />} />
-
-      <Route element={<RequireAuth allowedRoles={[]} />}>
-        <Route path="/cadastrarEscola" element={<RegistrationSchool />} />
-        <Route path="/loginSchool" element={<SchoolLogin />} />
-      </Route>
+      <Route path="/cadastrarEscola" element={<RegistrationSchool />} />
+      <Route path="/loginSchool" element={<SchoolLogin />} />
     </Routes>
   );
 }

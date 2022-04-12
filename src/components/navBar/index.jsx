@@ -1,5 +1,5 @@
 import React from "react";
-import { AuthContext } from "../../contexts/AuthProvider";
+import { AuthContext } from "../../contexts/AuthContext";
 import { ModalContext } from "../../contexts/ModalContext";
 import { NavItems } from "../../helpers/data/NavItems";
 
@@ -10,9 +10,6 @@ export default function NavBar() {
   const [colorNav, setColorNav] = React.useState(true);
 
   const { handleOpenModal } = React.useContext(ModalContext);
-  const { auth } = React.useContext(AuthContext);
-
-  console.log("token da bwé", auth.token);
 
   const handleClick = () => {
     setClick(!click);
@@ -48,15 +45,15 @@ export default function NavBar() {
                 </li>
               );
             })}
-            {!auth.token ? (
-              <li>
-                <style.ButtonLogin color={colorNav} onClick={handleOpenModal}>
-                  Fazer Login
-                </style.ButtonLogin>
-              </li>
-            ) : (
-              <span>{auth.userName.split(" ")[0]}</span>
-            )}
+            {/* {!token ? ( */}
+            <li>
+              <style.ButtonLogin color={colorNav} onClick={handleOpenModal}>
+                Fazer Login
+              </style.ButtonLogin>
+            </li>
+            {/* ) : (
+              <span>{userName.split(" ")[0].slice(0, 1)}</span>
+            )} */}
             <li>
               <style.NavLinkRegist
                 color={colorNav}

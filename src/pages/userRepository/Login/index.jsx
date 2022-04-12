@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useFormik } from "formik";
 import {
   AllInput,
@@ -9,12 +9,12 @@ import {
 import * as Icons from "react-icons/md";
 import { sessionValidator } from "../../../validations/userValidation";
 import * as style from "./style";
-import { api } from "../../../config/axios";
 import { ModalContext } from "../../../contexts/ModalContext";
-import { useAuth } from "../../../hooks/useAuth";
+import { AuthContext } from "../../../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 const initialValues = {
-  telefone: "",
+  contact: "",
   password: "",
 };
 
@@ -22,43 +22,28 @@ export default function Login() {
   const [show, setShow] = useState(false);
 
   const { handleCloseModal } = React.useContext(ModalContext);
-  const { setAuth } = useAuth();
+  const { LoginRequest, isAuthenticated } = useContext(AuthContext);
 
   const handleShow = (e) => {
     e.preventDefault();
     setShow(!show);
   };
 
-  const onSubmit = async (values) => {
-    const { telefone, password } = values;
+  useEffect(() => {
+    if (isAuthenticated) {
+      alert("Im logged");
+    }
+  }, [isAuthenticated]);
 
-    await api
-      .post("session", {
-        contact: telefone,
-        password,
-      })
-      .then((response) => {
-        console.log("session start", response?.data);
-        const userName = response?.data?.user.name;
-        const role = response?.data?.user.roleId.id;
-        const roleName = response?.data?.user.roleId.descricao;
-        const token = response?.data?.token;
-        setAuth({ userName, role, roleName, token });
-        console.log(userName, role, roleName, token);
-        formik.resetForm();
-        handleCloseModal();
-      })
-      .catch((error) => {
-        if (!error?.response) {
-          console.log("No server response");
-        } else if (error?.response?.status === 400) {
-          console.log("Missing Username or Password");
-        } else if (error?.response?.status === 401) {
-          console.log("Unauthorized");
-        } else {
-          console.log("Login Failed");
-        }
-      });
+  const onSubmit = async (values) => {
+    const loadToast = toast.loading("Processando");
+
+    if (values) {
+      console.log("dados de login", values);
+      await LoginRequest(values);
+      handleCloseModal();
+    }
+    toast.dismiss(loadToast);
   };
 
   const formik = useFormik({
@@ -94,16 +79,16 @@ export default function Login() {
               <FieldInput
                 type="text"
                 placeholder="Telefone"
-                name="telefone"
-                value={formik.values.telefone}
+                name="contact"
+                value={formik.values.contact}
                 onChange={formik.handleChange}
                 autocomplete="off"
                 onBlur={formik.handleBlur}
               />
             </AllInput>
             <Error>
-              {formik.touched.telefone && formik.errors.telefone
-                ? formik.errors.telefone
+              {formik.touched.contact && formik.errors.contact
+                ? formik.errors.contact
                 : ""}
             </Error>
           </FormGroup>

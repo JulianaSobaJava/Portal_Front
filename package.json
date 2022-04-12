@@ -9,7 +9,8 @@
     "@testing-library/user-event": "^13.2.1",
     "axios": "^0.26.0",
     "formik": "^2.2.9",
-    "history": "^5.2.0",
+    "history": "^5.3.0",
+    "jwt-decode": "^3.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
@@ -17,6 +18,7 @@
     "react-model": "^4.2.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "react-toastify": "^8.2.0",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.0",
     "yup": "^0.32.11"

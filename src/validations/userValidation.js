@@ -34,6 +34,6 @@ export const validationSchema = Yup.object().shape({
 });
 
 export const sessionValidator = Yup.object().shape({
-  telefone: Yup.string(),
+  contact: Yup.string(),
   password: Yup.string().required("Obrigatório"),
 });

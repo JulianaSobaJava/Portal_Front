@@ -11,7 +11,7 @@ import {
 import { validationSchema } from "../../validations/userValidation";
 import * as Icons from "react-icons/md";
 import { AiOutlineIdcard } from "react-icons/ai";
-import { api } from "../../config/axios";
+import { api } from "../../services/axios";
 import { ModalContext } from "../../contexts/ModalContext";
 
 const initialValues = {
