@@ -9,6 +9,11 @@ import Page404 from "./pages/page404/index";
 import RegistrationSchool from "./pages/schoolRepository/Sign/index";
 import SchoolLogin from "./pages/schoolRepository/Login/index";
 import Sign from "./pages/userRepository/Sign/index";
+import AdminRoutes from "./pages/admin/routes";
+import MyProfile from "./pages/userRepository/userDashboard/pages/MyProfile";
+import DashBoard from "./pages/userRepository/userDashboard/pages/Dashboard";
+import Favoritos from "./pages/userRepository/userDashboard/pages/Favoritos";
+import PesquisarEscolas from "./pages/userRepository/userDashboard/pages/Pesquisar escolas";
 
 export default function MainRoutes() {
   return (
@@ -22,6 +27,12 @@ export default function MainRoutes() {
       <Route path="*" element={<Page404 />} />
       <Route path="/cadastrarEscola" element={<RegistrationSchool />} />
       <Route path="/loginSchool" element={<SchoolLogin />} />
+
+      <Route path="/dashboard" element={<DashBoard />} />
+      <Route path="/pesquisar" element={<PesquisarEscolas />} />
+      <Route path="/favoritos" element={<Favoritos />} />
+      <Route path="/meuperfil" element={<MyProfile />} />
+      {/* <AdminRoutes /> */}
     </Routes>
   );
 }

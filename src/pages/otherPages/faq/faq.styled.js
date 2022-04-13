@@ -21,7 +21,7 @@ export const CardBody = styled.div`
   height: 100%;
 `;
 export const Card = styled.div`
-  with: 100%;
+  width: 100%;
   height: 100%;
   margin: 2% 0;
   background: var(--white-color);
