@@ -1,17 +1,60 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { FaAngleDown } from "react-icons/fa";
 
 export const RandomSchools = styled.section`
   width: 100%;
   padding: 1% 6%;
 
-  span {
-    color: var(--main-color);
-  }
-
-  h4 {
+  /* h4 {
     margin: 30px 0 10px 2%;
+    position: relative;
+    background-color: ${(props) => (props.status ? "yellow" : "blue")};
+
+    display: flex;
+    align-items: center;
+
+    .dropdown-content {
+      display: ${(props) => (props.status ? "block" : "none")};
+      background-color: blue;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 3;
+    }
+  } */
+`;
+
+export const Content = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+`;
+
+export const Dropdown = styled.div`
+  position: relative;
+  margin-left: 10px;
+
+  button {
+    display: flex;
+    background-color: transparent;
+
+    h3 {
+      color: var(--primaryColor);
+    }
   }
+`;
+export const Icons = styled(FaAngleDown)`
+  color: var(--primaryColor);
+  font-size: 1.2em;
+  margin-top: 3%;
+`;
+
+export const DropdownContent = styled.div`
+  background-color: pink;
+  display: ${(props) => (props.status ? "block" : "none")};
+  position: absolute;
+  z-index: 1;
 `;
 
 export const RandomContainer = styled.div`

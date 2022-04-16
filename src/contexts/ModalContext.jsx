@@ -4,6 +4,14 @@ export const ModalContext = React.createContext({});
 
 export const ModalProvider = ({ children }) => {
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
+  const [sideBarUser, setSideBarUser] = React.useState(false);
+
+  function handleSidebarUserOpen() {
+    setSideBarUser(true);
+  }
+  function handleSidebarUserClose() {
+    setSideBarUser(false);
+  }
 
   function handleOpenModal() {
     setModalIsOpen(true);
@@ -15,7 +23,14 @@ export const ModalProvider = ({ children }) => {
 
   return (
     <ModalContext.Provider
-      value={{ modalIsOpen, handleOpenModal, handleCloseModal }}
+      value={{
+        modalIsOpen,
+        handleOpenModal,
+        handleCloseModal,
+        handleSidebarUserOpen,
+        handleSidebarUserClose,
+        sideBarUser,
+      }}
     >
       {children}
     </ModalContext.Provider>

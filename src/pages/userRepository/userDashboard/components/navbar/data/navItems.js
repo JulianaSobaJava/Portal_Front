@@ -1,18 +1,17 @@
 export const NavItems = [
   {
-    to: "/dashboard",
-    name: "Dashboard",
+    name: "Cursos",
   },
   {
-    to: "/favoritos",
-    name: "Favoritos",
+    name: "Escolas",
   },
   {
-    to: "/meuperfil",
-    name: "Meu Perfil",
+    name: "Teste Vocaional",
   },
   {
-    to: "/pesquisar",
     name: "Pesquisar Escolas",
+  },
+  {
+    name: "Alguma Coisa",
   },
 ];

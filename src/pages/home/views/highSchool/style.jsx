@@ -51,7 +51,16 @@ export const DescriptionHighSchoolSection = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  p {
-    margin-top: 1em;
+  h2 {
+    margin: 2% 0;
+    color: #232332;
+    font-size: 40px;
+    font-weight: 500;
+  }
+  > p {
+    margin: 2% 0;
+    font-size: 20px;
+    color: #232332;
+    line-height: 1.5;
   }
 `;

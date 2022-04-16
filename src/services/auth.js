@@ -7,6 +7,9 @@ const delay = (amoutn = 750) =>
 
 let token = null;
 
+//Verificando se o Token existe no navegador
+export const isAuthenticated = () => localStorage.getItem("Token") !== null;
+
 export async function Login(data) {
   const response = await api
     .post("session", data)

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Faq from "../otherPages/faq/faq";
-import AboutContainer from "../otherPages/about/aboutContainer";
+import AboutContainer from "../otherPages/about/index";
 import * as style from "./style";
 import Container from "../../components/container/index";
 import WrapperContainer from "../../components/wrapper";

@@ -23,6 +23,8 @@ export const Post = styled.div`
 
   p {
     margin-top: 40px;
+    color: #232332;
+    line-height: 1.5;
   }
 
   &:hover {

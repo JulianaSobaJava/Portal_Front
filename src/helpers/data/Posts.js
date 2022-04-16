@@ -60,9 +60,18 @@ const LinkTittle = styled(Link)`
   margin-bottom: 1em;
 
   h4 {
+    color: #232332;
+    font-size: 26px;
+    font-weight: 500;
     text-align: left;
     color: var(--black-color);
-    margin-bottom: 1em;
+    margin-bottom: 0.6em;
+  }
+  p {
+    margin: 0.2em 0;
+    font-size: 14px;
+    color: #232332;
+    line-height: 1.5;
   }
 `;
 export default function Posts() {

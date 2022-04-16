@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const AsideLinks = styled.aside`
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 20%;
   height: 100vh;
   padding: 4% 4%;
 
@@ -48,7 +48,7 @@ export const MainAbout = styled.section`
 `;
 
 export const AboutPortal = styled.section`
-  width: 70%;
+  width: 80%;
   height: 100%;
   padding: 4% 5%;
   background-color: var(--grey-background);

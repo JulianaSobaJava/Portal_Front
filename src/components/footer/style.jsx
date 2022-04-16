@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 
 export const Footer = styled.footer`
   background-color: var(--grey-dark);
-  width: 100%;
   height: 40vh;
-  margin-top: 2em;
+  margin-top: 10em;
+  width: 100%;
   color: var(--white-color);
+  margin: 0;
+
+  @media (max-width: 360) {
+    height: 20vh;
+  }
 `;
 export const footerContainer = styled.div`
   width: 100%;
@@ -36,9 +41,10 @@ export const footerIcons = styled(Link)`
 `;
 export const navFooterSocial = styled.ul`
   display: flex;
+  margin: 0;
 
   li {
-    margin: 0 1em;
+    margin: 0 0;
   }
 `;
 export const FooterImg = styled.span`

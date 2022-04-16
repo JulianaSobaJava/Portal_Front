@@ -23,7 +23,6 @@ export default createGlobalStyle`
 }
 
 html{
-        height: 100%;
     @media(max-width:1080){
         font-size: 93.75%;
     }
@@ -38,18 +37,27 @@ body, input, textarea, button {
     font-weight:400;
 }
 
+
 h1,h2,h3,h4,h5,h6, strong{
     font-weight:600;
 }
 
-li{
+li, ul{
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
+ul{
+    padding-inline-start: 0;
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+
 
 body{
     background:var(--background);
     --webkit-font-smoothing: antialiased;
- 
+    overflow-x: hidden;
 }
 
 button{

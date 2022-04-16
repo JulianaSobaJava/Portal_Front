@@ -26,7 +26,7 @@ export default function NavBar() {
     <style.Header color={colorNav}>
       <style.Navbar>
         <style.NavBarLogo to="/" color={colorNav}>
-          Logo
+          Portal das Escolas
         </style.NavBarLogo>
         <style.FaBar onClick={handleClick} />
         <style.NavItemsContainer style={click ? { right: "0" } : {}}>

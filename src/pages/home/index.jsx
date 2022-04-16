@@ -21,8 +21,8 @@ export default function Home() {
         <HighSchoolSection />
         <Introduce />
         <Question />
-        <Footer />
       </Container>
+      <Footer />
     </>
   );
 }

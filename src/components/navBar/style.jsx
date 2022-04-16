@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import * as Icons from "react-icons/fa";
 
 export const Header = styled.header`
-  width: 100%;
   height: 9vh;
   position: fixed;
+  inset: 0;
   z-index: 8;
+  width: 100%;
   transition: background 0.3s ease-in-out;
-  padding: ${(props) => (props.color ? "2% 4%" : "1% 4%")};
+  padding: ${(props) => (props.color ? "2% 3%" : "1% 3%")};
   ${(props) =>
     !props.color &&
     `
@@ -26,12 +27,23 @@ export const Navbar = styled.nav`
   align-items: center;
 `;
 export const NavBarLogo = styled(Link)`
-  font-size: 38px;
+  font-size: 1.3em;
   color: ${(props) =>
     props.color ? "var(--white-color)" : "var(--black-color)"};
 
-  @media (min-width: 900px) {
-    font-size: 30px;
+  @media (max-width: 282px) {
+    font-size: 0.2em;
+  }
+
+  @media (max-width: 820px) {
+    font-size: 0.8em;
+  }
+  @media (max-width: 912px) {
+    font-size: 1em;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 1.1em;
   }
 `;
 export const NavItemsContainer = styled.div`
@@ -41,16 +53,38 @@ export const NavItemsContainer = styled.div`
   justify-content: flex-end;
 
   @media (max-width: 1110px) {
-    background: var(mainColor);
+    background: var(--main-color);
     position: fixed;
     display: block;
     color: #fff;
-    width: 300px;
-    height: 100vh;
+    width: 400px;
+    height: 100%;
     z-index: 2;
     top: 0;
     padding-left: 3%;
-    right: -300px;
+    right: -400px;
+    text-align: left;
+    transition: 1s;
+
+    ul {
+      padding: 30px 0 10px;
+      @media (max-width: 1110px) {
+        padding: 30px;
+      }
+    }
+  }
+
+  @media (max-width: 440px) {
+    background: var(--main-color);
+    position: fixed;
+    display: block;
+    color: #fff;
+    width: 200px;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    padding-left: 3%;
+    right: -200px;
     text-align: left;
     transition: 1s;
 
