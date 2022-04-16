@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import * as S from "./style";
+import * as S from './style';
 
-import Posts from "../../../../helpers/data/Posts";
+import Posts from '../../../../helpers/data/Posts';
 
 export default function Future() {
   return (
