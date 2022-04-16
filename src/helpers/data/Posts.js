@@ -20,10 +20,9 @@ const Post = styled.div`
 const PostContent = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 500px;
   height: 90%;
   padding: 0 2em;
-  margin: 4px 0;
   color: var(--black-color);
   background: var(--white-color);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
