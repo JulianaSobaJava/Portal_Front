@@ -5,6 +5,7 @@ export const ModalContext = React.createContext({});
 export const ModalProvider = ({ children }) => {
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
   const [sideBarUser, setSideBarUser] = React.useState(false);
+  const [navItem, setNavItem] = React.useState("Cursos");
 
   function handleSidebarUserOpen() {
     setSideBarUser(true);
@@ -30,6 +31,8 @@ export const ModalProvider = ({ children }) => {
         handleSidebarUserOpen,
         handleSidebarUserClose,
         sideBarUser,
+        setNavItem,
+        navItem,
       }}
     >
       {children}

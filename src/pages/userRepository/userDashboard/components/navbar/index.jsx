@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useContext } from "react";
 import { NavItems } from "./data/navItems";
 import styled from "styled-components";
+
+import { ModalContext } from "../../../../../contexts/ModalContext";
 
 const Nav = styled.nav`
   width: 100%;
@@ -38,19 +40,18 @@ const Button = styled.button`
 `;
 
 export default function NavBar() {
-  const [active, setActive] = useState(0);
+  const { setNavItem } = useContext(ModalContext);
 
-  const handleActive = (idc, e) => {
-    console.log(e);
-    console.log("active", active, "idc", idc);
+  const handleActive = (item) => {
+    setNavItem(item);
   };
 
   return (
     <Nav>
       <List>
         {NavItems.map((item, idc) => (
-          <ListItem key={idc} className={active === 0 ? "active" : ""}>
-            <Button key={idc} onChange={handleActive(idc)}>
+          <ListItem key={idc}>
+            <Button key={idc} onClick={(e) => handleActive(e.target.innerText)}>
               {item.name}
             </Button>
           </ListItem>

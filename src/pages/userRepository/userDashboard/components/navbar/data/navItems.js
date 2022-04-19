@@ -6,12 +6,9 @@ export const NavItems = [
     name: "Escolas",
   },
   {
-    name: "Teste Vocaional",
+    name: "Teste Vocacional",
   },
   {
     name: "Pesquisar Escolas",
-  },
-  {
-    name: "Alguma Coisa",
   },
 ];

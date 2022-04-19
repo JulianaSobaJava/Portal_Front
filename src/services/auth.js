@@ -10,6 +10,31 @@ let token = null;
 //Verificando se o Token existe no navegador
 export const isAuthenticated = () => localStorage.getItem("Token") !== null;
 
+export const isAdmin = () => {
+  const User = JSON.parse(localStorage.getItem("userLogado")) || {
+    email: "superadmin@gmail.com",
+  };
+
+  if (
+    (User && User.email === "superadmin@gmail.com") ||
+    User.roleId.description === "superAdmin"
+  )
+    return true;
+
+  return false;
+};
+
+//Logando o user
+export const UserLogado = (user) =>
+  localStorage.setItem("userLogado", JSON.stringify(user));
+
+// Pegando os Dados do UserLogado
+export const GetUser = () =>
+  JSON.parse(localStorage.getItem("userLogado")) || {};
+
+// Eliminando dados do UserLogado
+export const RemoveUser = () => localStorage.removeItem("userLogado");
+
 export async function Login(data) {
   const response = await api
     .post("session", data)

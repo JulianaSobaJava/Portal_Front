@@ -1,5 +1,4 @@
 import React from "react";
-import { AuthContext } from "../../contexts/AuthContext";
 import { ModalContext } from "../../contexts/ModalContext";
 import { NavItems } from "../../helpers/data/NavItems";
 

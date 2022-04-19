@@ -4,6 +4,8 @@ import Wrapper from "../../components/wrapper";
 import * as S from "./style";
 import NavBar from "../../components/navBar/index";
 import Footer from "../../components/footer";
+import image from "../../assets/image/slide1.jpg";
+import { Post } from "../../components/post/index";
 
 export default function News() {
   return (
@@ -13,33 +15,64 @@ export default function News() {
         <Wrapper tittle="Notícias" />
         <S.Content>
           <S.Aside>
-            <div>
-              <div>
+            <S.AsideContent>
+              <S.SeachInput>
                 <input type="text" placeholder="Pesquisar por notícias" />
-              </div>
-              <ul>
+              </S.SeachInput>
+              <S.List>
                 <h3>Categorias</h3>
-                <li>Todos</li>
-                <li>Escolas</li>
-                <li>Cursos</li>
-                <li>Teste</li>
-              </ul>
-              <ul>
+                <S.ListItem>Todos</S.ListItem>
+                <S.ListItem>Escolas (10)</S.ListItem>
+                <S.ListItem>Cursos (5)</S.ListItem>
+                <S.ListItem>Teste (12)</S.ListItem>
+              </S.List>
+              <S.List>
                 <h3>Artigos</h3>
-                <li>O que a intiligência</li>
-                <li>Cursos em alta</li>
-                <li>O que a intiligência</li>
-              </ul>
-              <ul>
+                <S.ListArticle>
+                  <div>
+                    <img src={image} alt="" />
+                  </div>
+                  <S.Span>
+                    <p>O que é a intiligência</p>
+                    <span>Fevereiro 03, 2020</span>
+                  </S.Span>
+                </S.ListArticle>
+                <S.ListArticle>
+                  <div>
+                    <img src={image} alt="" />
+                  </div>
+                  <S.Span>
+                    <p>Cursos em alta</p>
+                    <span>Junho 12, 2022</span>
+                  </S.Span>
+                </S.ListArticle>
+                <S.ListArticle>
+                  <div>
+                    <img src={image} alt="" />
+                  </div>
+                  <S.Span>
+                    <p>O que é o bullying?</p>
+                    <span>Março 03, 2021</span>
+                  </S.Span>
+                </S.ListArticle>
+              </S.List>
+              <S.List>
                 <h3>Procurar por</h3>
-                <li>Nome</li>
-                <li>Munícipio</li>
-                <li>Bairro</li>
-                <li>Cursos</li>
-              </ul>
-            </div>
+                <S.Filter>
+                  <li>Nome</li>
+                  <li>Munícipio</li>
+                  <li>Bairro</li>
+                  <li>Cursos</li>
+                </S.Filter>
+              </S.List>
+            </S.AsideContent>
           </S.Aside>
-          <S.Main> Main Section</S.Main>
+          <S.Main>
+            <S.Postes>
+              <Post />
+              <Post />
+            </S.Postes>
+          </S.Main>
         </S.Content>
       </Container>
       <Footer />

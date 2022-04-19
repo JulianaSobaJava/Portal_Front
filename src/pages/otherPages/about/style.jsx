@@ -21,20 +21,41 @@ export const Row = styled.div`
   width: 100%;
 `;
 
-export const FirstRow = styled.div`
-  h3 {
-    margin: 2% 0;
-    color: #232332;
-    font-size: 30px;
-    font-weight: 500;
-  }
-  > p {
-    margin: 2% 0;
-    font-size: 18px;
-    color: #232332;
-    line-height: 1.5;
+export const RowValue = styled(Row)`
+  flex-direction: column;
+
+  > h3 {
+    position: relative;
+    left: -38%;
   }
 `;
+export const Tittle = styled.h3`
+  margin: 2% 0;
+  color: #232332;
+  font-size: 30px;
+  font-weight: 500;
+`;
+export const TittleValue = styled.h3`
+  margin: 2% 0;
+  color: #232332;
+  font-size: 22px;
+  font-weight: 500;
+`;
+
+export const Div = styled.div`
+  display: flex;
+  align-items: center;
+  padding-left: 0.5%;
+`;
+
+export const Paragraphy = styled.p`
+  margin: 2% 0;
+  font-size: 18px;
+  color: #232332;
+  line-height: 1.5;
+`;
+
+export const FirstRow = styled.div``;
 
 export const Image = styled.div`
   padding: 0 0 0 8%;
@@ -48,34 +69,9 @@ export const ImageRowTwo = styled.div`
   align-items: center;
 `;
 
-export const SecondtRow = styled.div`
-  h3 {
-    margin: 2% 0;
-    color: #232332;
-    font-size: 30px;
-    font-weight: 500;
-  }
-  > p {
-    margin: 2% 0;
-    font-size: 18px;
-    color: #232332;
-    line-height: 1.5;
-  }
-`;
+export const SecondtRow = styled.div``;
 export const ThirdRow = styled.div`
   padding: 0 3%;
-  h3 {
-    margin: 2% 0;
-    color: #232332;
-    font-size: 30px;
-    font-weight: 500;
-  }
-  > p {
-    margin: 2% 0;
-    font-size: 18px;
-    color: #232332;
-    line-height: 1.5;
-  }
 `;
 export const RowGroup = styled.div`
   width: 100%;
