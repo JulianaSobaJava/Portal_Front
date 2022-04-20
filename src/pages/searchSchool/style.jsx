@@ -22,30 +22,33 @@ export const ContainerSearch = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 8vh;
-  width: 60%;
+  height: 16vh;
+  width: 80%;
   margin-top: 2em;
-  background-color: var(--white-color);
-  border-radius: 50px;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+`;
 
-  div {
-    margin: 0;
-    width: 80%;
-  }
-  button {
-    padding: 1.1em;
-    border-radius: 50px;
-    margin-top: 0;
-    margin-left: 1em;
-    display: flex;
-    align-items: center;
-    background: transparent;
-  }
+export const InputContainer = styled.div`
+  margin: 0 auto;
+  width: 96%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const InputContent = styled.div`
+  height: 50%;
+  width: 32%;
+  background-color: var(--white-color);
+  padding-left: 10px;
+  border: 1px solid #efefef;
 `;
 export const Input = styled.input`
   height: 100%;
-  width: 90%;
+  width: 100%;
 `;
+
 export const SchoolContent = styled.section`
   height: 100%;
   width: 100%;
@@ -53,7 +56,7 @@ export const SchoolContent = styled.section`
   justify-content: space-between;
 `;
 export const SchoolContentSection = styled.div`
-  width: 62%;
+  width: 70%;
   height: 100%;
   background-color: var(--grey-background-second);
 `;
@@ -83,4 +86,6 @@ export const TypeView = styled.div`
 export const Views = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
 `;

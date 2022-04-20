@@ -21,6 +21,7 @@ import TesteEdit from "./pages/admin/pages/teste/data/testeEdit";
 import Escolas from "./pages/admin/pages/escolaRepository/style";
 import EscolaAdd from "./pages/admin/pages/escolaRepository/data/escolaAdd";
 import EscolaEdit from "./pages/admin/pages/escolaRepository/data/escolaEdit";
+import SchoolProfile from "./pages/schoolRepository/Profile";
 
 export default function MainRoutes() {
   return (
@@ -34,6 +35,9 @@ export default function MainRoutes() {
       <Route path="*" element={<Page404 />} />
       <Route path="/cadastrar/escola" element={<RegistrationSchool />} />
       <Route path="/login/escola" element={<SchoolLogin />} />
+
+      <Route path="/escola:id" element={<SchoolProfile />} />
+      <Route path="/escola/dash" element={<AdminHome />} />
 
       <Route path="/admin/area" element={<AdminArea />} />
       <Route path="/admin/home" element={<AdminHome />} />

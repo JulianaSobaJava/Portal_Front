@@ -35,11 +35,8 @@ export const Tittle = styled.h3`
   font-size: 30px;
   font-weight: 500;
 `;
-export const TittleValue = styled.h3`
-  margin: 2% 0;
-  color: #232332;
-  font-size: 22px;
-  font-weight: 500;
+export const TittleValue = styled(Tittle)`
+  font-size: 22px !important;
 `;
 
 export const Div = styled.div`

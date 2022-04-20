@@ -6,7 +6,7 @@ import GridView from "../../components/gridView";
 import MapaView from "../../components/mapaView";
 import { schools } from "../../helpers/data/schools";
 import * as Icons from "react-icons/fa";
-import * as style from "./searchSchool.styled";
+import * as style from "./style";
 import NavBar from "../../components/navBar/index";
 import Footer from "../../components/footer";
 
@@ -24,17 +24,35 @@ export default function SearchSchool() {
           <style.SchoolSearch>
             <h1>Pesquisar por escolas</h1>
             <style.ContainerSearch>
-              <div>
-                <Icons.FaSearch />
-                <style.Input
-                  placeholder="Insira o nome de uma escola"
-                  type="text"
-                  onChange={(e) => {
-                    setQuery(e.target.value);
-                  }}
-                />
-              </div>
-              <button>Pesquisar</button>
+              <style.InputContainer>
+                <style.InputContent>
+                  <style.Input
+                    placeholder="Insira o nome de uma escola"
+                    type="text"
+                    onChange={(e) => {
+                      setQuery(e.target.value);
+                    }}
+                  />
+                </style.InputContent>
+                <style.InputContent>
+                  <style.Input
+                    placeholder="Curso"
+                    type="text"
+                    onChange={(e) => {
+                      setQuery(e.target.value);
+                    }}
+                  />
+                </style.InputContent>
+                <style.InputContent>
+                  <style.Input
+                    placeholder="Em que local quer estudar"
+                    type="text"
+                    onChange={(e) => {
+                      setQuery(e.target.value);
+                    }}
+                  />
+                </style.InputContent>
+              </style.InputContainer>
             </style.ContainerSearch>
           </style.SchoolSearch>
         </style.SchoolBanner>

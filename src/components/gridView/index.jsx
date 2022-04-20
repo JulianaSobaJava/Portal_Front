@@ -8,6 +8,7 @@ const Result = styled.div`
   div {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 
@@ -16,7 +17,9 @@ function GridView({ schools, query }) {
     <Result>
       <div>
         {schools
-          .filter((school) => school.nome.toLowerCase().includes(query))
+          .filter((school) =>
+            school.nome.toLowerCase().includes(query.toLowerCase())
+          )
           .map((school) => {
             return <Post nome={school.nome} />;
           })}

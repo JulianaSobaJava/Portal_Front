@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.div`
-  width: 700px;
+  width: 720px;
   height: 400px;
   padding: 2px;
 
