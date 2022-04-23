@@ -11,7 +11,7 @@ export default function RegistrationSchool() {
   return (
     <Container>
       <S.Content>
-        <Link to="/loginSchool" h4="Fazer Login" />
+        <Link to="/login/escola" h4="Fazer Login" />
         <S.FormContent>
           <Info />
           <S.FormUser>

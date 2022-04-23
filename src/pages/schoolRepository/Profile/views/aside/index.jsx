@@ -15,7 +15,9 @@ export default function Aside() {
       </div>
       <div>
         <h3>Avaliação</h3>
-        <p>stars</p>
+        <p>
+          <Icons.FaStar />
+        </p>
       </div>
       <div>
         <h3>Concorrência</h3>

@@ -6,6 +6,7 @@ import NavBar from "../../components/navBar/index";
 import Footer from "../../components/footer";
 import image from "../../assets/image/slide1.jpg";
 import { Post } from "../../components/post/index";
+import { Loader } from "../../components/loader";
 
 export default function News() {
   return (
@@ -72,6 +73,7 @@ export default function News() {
               <Post />
               <Post />
             </S.Postes>
+            <Loader />
           </S.Main>
         </S.Content>
       </Container>

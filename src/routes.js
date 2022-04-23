@@ -23,6 +23,8 @@ import EscolaAdd from "./pages/admin/pages/escolaRepository/data/escolaAdd";
 import EscolaEdit from "./pages/admin/pages/escolaRepository/data/escolaEdit";
 import SchoolProfile from "./pages/schoolRepository/Profile";
 
+import TesteUser from "./pages/instructor/teste";
+
 export default function MainRoutes() {
   return (
     <Routes>
@@ -31,6 +33,7 @@ export default function MainRoutes() {
       <Route path="/news" element={<News />} />
       <Route path="/schools" element={<SearchSchool />} />
       <Route path="/instructor" element={<Instructor />} />
+      <Route path="/teste-vocacional" element={<TesteUser />} />
       <Route path="/about" element={<About />} />
       <Route path="*" element={<Page404 />} />
       <Route path="/cadastrar/escola" element={<RegistrationSchool />} />

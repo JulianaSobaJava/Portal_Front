@@ -5,26 +5,7 @@ import { FaAngleDown } from "react-icons/fa";
 export const RandomSchools = styled.section`
   width: 100%;
   padding: 1% 6%;
-
-  /* h4 {
-    margin: 30px 0 10px 2%;
-    position: relative;
-    background-color: ${(props) => (props.status ? "yellow" : "blue")};
-
-    display: flex;
-    align-items: center;
-
-    .dropdown-content {
-      display: ${(props) => (props.status ? "block" : "none")};
-      background-color: blue;
-      min-width: 160px;
-      overflow: auto;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 3;
-    }
-  } */
 `;
-
 export const Content = styled.div`
   display: flex;
   align-items: center;
@@ -89,7 +70,6 @@ export const Box = styled.div`
   height: 18em;
   flex: 1 1 16em;
   border: 1rem solid #fff;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   position: relative;
   overflow: hidden;

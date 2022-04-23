@@ -56,7 +56,7 @@ export default function NavBar() {
             <li>
               <style.NavLinkRegist
                 color={colorNav}
-                to="/cadastrarEscola"
+                to="/cadastrar/escola"
                 onClick={handleClick}
               >
                 Cadastrar Escola

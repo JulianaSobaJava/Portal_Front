@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "./auth";
 
 export const api = axios.create({
-  baseURL: "http://localhost:5050/",
+  baseURL: "https://­app-portalapi.herokua­pp.com/",
 });
 
 api.interceptors.request.use(async (config) => {

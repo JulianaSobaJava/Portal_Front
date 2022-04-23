@@ -1,5 +1,5 @@
 import React from "react";
-
+import * as S from "./style";
 export function AdminHome() {
-  return <div>Adim Home</div>;
+  return <S.Container></S.Container>;
 }
