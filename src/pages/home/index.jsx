@@ -18,11 +18,11 @@ export default function Home() {
         <Search />
         <Slide />
         <Future />
-        <HighSchoolSection />
+        {/*<HighSchoolSection />
         <Introduce />
-        <Question />
+        <Question /> */}
       </Container>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

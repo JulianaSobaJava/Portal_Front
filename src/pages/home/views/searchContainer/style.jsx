@@ -8,6 +8,10 @@ export const SearchContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 280px) {
+    width: 100%;
+  }
 `;
 export const Search = styled.div`
   padding: 3em 4em;
@@ -18,6 +22,26 @@ export const Search = styled.div`
   width: 80%;
   height: 50vh;
   background-color: var(--main-color);
+
+  @media (max-width: 1280px) {
+    width: 90%;
+    padding: 2em 4em;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 1em 4em;
+  }
+
+  @media (max-width: 780px) {
+    width: 100%;
+    padding: 2em 1em;
+    height: 50vh;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-align: left;
+  }
 `;
 export const InputSearch = styled.div`
   margin-top: 10px;
@@ -29,6 +53,10 @@ export const InputSearch = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 3em;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 1em;
+  }
 
   input {
     width: 80%;
@@ -57,6 +85,12 @@ export const FiltersGroups = styled.div`
   transition: all 1s ease;
   cursor: pointer;
 
+  @media (max-width: 780px) {
+    height: 20px;
+    padding: 1em 0.8em;
+    font-size: 12px;
+  }
+
   input {
     display: ${(props) => (props.click ? "flex" : "none")};
     overflow: visible;
@@ -72,4 +106,11 @@ export const LinkExplore = styled(Link)`
   align-items: center;
   position: relative;
   top: 50%;
+
+  @media (max-width: 1280px) {
+    top: 30%;
+  }
+  @media (max-width: 1024px) {
+    top: 5%;
+  }
 `;

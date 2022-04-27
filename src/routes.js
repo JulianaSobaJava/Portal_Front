@@ -12,7 +12,7 @@ import Sign from "./pages/userRepository/Sign/index";
 import { Profile } from "./pages/userRepository/userDashboard/pages/Profile";
 import { DashBoard } from "./pages/userRepository/userDashboard/pages/DashBoard";
 import { AdminArea } from "./pages/admin/pages/adminArea";
-import { AdminHome } from "./pages/admin/pages/home";
+import { AdminHome } from "./pages/admin/pages/home/index";
 import { AdminInfo } from "./pages/admin/pages/info";
 import Pedidos from "./pages/admin/pages/pedidos";
 import Teste from "./pages/admin/pages/teste";
@@ -40,7 +40,7 @@ export default function MainRoutes() {
       <Route path="/login/escola" element={<SchoolLogin />} />
 
       <Route path="/escola:id" element={<SchoolProfile />} />
-      <Route path="/escola/dash" element={<AdminHome />} />
+      <Route path="/escola/dash" element={<h1>Olá </h1>} />
 
       <Route path="/admin/area" element={<AdminArea />} />
       <Route path="/admin/home" element={<AdminHome />} />

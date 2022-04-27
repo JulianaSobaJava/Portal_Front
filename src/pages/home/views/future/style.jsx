@@ -5,12 +5,20 @@ export const FutureContainer = styled.section`
   width: 100%;
   height: 96vh;
   background-color: var(--main-color);
+  overflow-x: hidden;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const FutureContent = styled.div`
   display: flex;
   width: 100%;
   height: 38%;
+  @media (width: 390px) {
+    height: 30%;
+  }
 
   span {
     width: 50%;
@@ -27,11 +35,35 @@ export const FutureDescripion = styled.div`
     color: var(--white-color);
     font-size: 3em;
     margin-bottom: 20px;
+
+    @media (max-width: 1030px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      font-size: 1.2em;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 1.2em;
+    }
   }
   p {
     color: var(--white-color);
     font-weight: bold;
     padding-right: 8%;
+
+    @media (max-width: 1030px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 700px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 12px;
+    }
   }
 `;
 export const Cloud = styled(Icons.MdOutlineCloudQueue)`
@@ -41,6 +73,11 @@ export const Cloud = styled(Icons.MdOutlineCloudQueue)`
   top: 26%;
   left: 28%;
   z-index: 1;
+
+  @media (max-width: 700px) {
+    top: 10%;
+    left: 10%;
+  }
 `;
 
 export const Book = styled(Icons.MdOutlineMenuBook)`
@@ -50,6 +87,10 @@ export const Book = styled(Icons.MdOutlineMenuBook)`
   left: 80%;
   top: 70%;
   z-index: 3;
+
+  @media (max-width: 700px) {
+    left: 50%;
+  }
 `;
 
 export const PostFuture = styled.div`
@@ -57,4 +98,9 @@ export const PostFuture = styled.div`
   display: flex;
   height: 60%;
   position: relative;
+
+  @media (max-width: 800px) {
+    overflow-x: hidden;
+    height: 50%;
+  }
 `;

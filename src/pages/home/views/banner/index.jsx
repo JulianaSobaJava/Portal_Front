@@ -22,6 +22,7 @@ export default function Banner() {
             </S.ButtonGroup>
           </S.Text>
         </div>
+
         <div>
           <S.Text>
             <h1>Portal das Escolas</h1>
@@ -37,6 +38,7 @@ export default function Banner() {
             </S.ButtonGroup>
           </S.Text>
         </div>
+
         <div>
           <S.Text>
             <h1>Faça o teste</h1>
@@ -53,6 +55,7 @@ export default function Banner() {
             </S.ButtonGroup>
           </S.Text>
         </div>
+
         <div>
           <S.Text>
             <h1>Encontre a escola e </h1>
@@ -69,6 +72,7 @@ export default function Banner() {
             </S.ButtonGroup>
           </S.Text>
         </div>
+
         <div>
           <S.Text>
             <h1>Portal das Escolas</h1>

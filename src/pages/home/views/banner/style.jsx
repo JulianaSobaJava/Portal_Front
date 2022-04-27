@@ -39,19 +39,20 @@ const slider = keyframes`
 
 export const Wrapper = styled.div`
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
 
   ul {
     position: relative;
     width: 500%;
     height: 100%;
-    left: 0px;
+    left: 0;
     margin: 0;
     animation: 20s ${slider} infinite;
     transition: 10s all;
+    display: flex;
 
     > div {
-      float: left;
       width: 20%;
       height: 100%;
 
@@ -61,8 +62,14 @@ export const Wrapper = styled.div`
       flex-wrap: wrap;
       background-repeat: no-repeat;
       background-size: 100%;
-      display: flex;
       align-items: center;
+      background-size: cover;
+
+      @media (max-width: 760px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
       :nth-child(1) {
         background-image: linear-gradient(
@@ -114,21 +121,46 @@ export const Text = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 10%;
+  top: 1%;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 4% 6%;
 
+  @media (max-width: 760px) {
+    width: 80%;
+    height: 50vh;
+  }
+  @media (max-width: 1024px) {
+    width: 80%;
+    height: 50vh;
+  }
+
   h1 {
     font-size: 70px;
     margin-top: 3%;
+
+    @media (max-width: 760px) {
+      font-size: 40px;
+      margin-top: 1%;
+    }
+
+    @media (max-width: 290px) {
+      font-size: 20px;
+      margin-top: 1%;
+    }
   }
 
   p {
     margin: 10px 0 20px;
     font-size: 20px;
     color: #fff;
+
+    @media (max-width: 760px) {
+      font-size: 12px;
+      color: #fff;
+      margin: 10px 0 20px;
+    }
   }
 `;
 
@@ -153,8 +185,8 @@ export const LinkButton = styled(Link)`
     color: var(--white-color);
     background: var(--main-color);
   }
-  @media (max-width: 1110px) {
-    border: none;
-    padding: 0;
+
+  @media (max-width: 760px) {
+    font-size: 10px;
   }
 `;

@@ -7,7 +7,6 @@ const Main = styled.main`
   height: 100%;
   position: relative;
   width: 100%;
-  min-width: 360px;
 `;
 
 export default function Container(props) {
