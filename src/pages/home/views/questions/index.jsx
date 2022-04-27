@@ -18,7 +18,7 @@ export default function Question() {
         <S.QuestionDescription>
           <h1>Tem alguma questão?</h1>
           <label>
-            <S.QuestionLink to="/about">Vá para as FAQ</S.QuestionLink>
+            <S.QuestionLink1 to="/about">Vá para as FAQ</S.QuestionLink1>
             <strong>ou</strong>
             <S.QuestionLink to="/contacto">
               Entre em contacto conosco
