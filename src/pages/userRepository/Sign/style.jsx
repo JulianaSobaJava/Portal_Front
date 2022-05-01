@@ -37,6 +37,11 @@ export const Container = styled.div`
   align-items: center;
   position: absolute;
 
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    padding: 2% 0;
+  }
+
   &:before {
     content: " ";
     z-index: 4;
@@ -45,6 +50,10 @@ export const Container = styled.div`
     position: absolute;
     background-color: var(--main-color);
     animation: ${slideOut} 0.8s;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 `;
 
@@ -52,6 +61,13 @@ export const FirstColumn = styled.div`
   text-align: center;
   width: 40%;
   z-index: ${(props) => (props.animatioContent ? "5" : "5")};
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    padding: 14% 0;
+    background-color: var(--main-color);
+    margin-bottom: 10px;
+  }
   p {
     font-size: 14px;
     font-weight: 300;
@@ -88,6 +104,11 @@ export const SecondColumn = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: ${(props) => (props.animatioContent ? "11" : "2")};
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    padding: 3% 0;
+  }
 
   h3 {
     font-size: 26px;

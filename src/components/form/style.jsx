@@ -33,6 +33,13 @@ export const FormikForm = styled.form`
   height: 98%;
   position: relative;
 
+  @media (max-width: 1024px) {
+    width: 60%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 90%;
+  }
   button {
     width: 10em;
     margin: 6px 8px;

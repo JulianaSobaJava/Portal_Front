@@ -8,6 +8,13 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: center;
 
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   &:before {
     content: " ";
     z-index: 4;
@@ -16,6 +23,10 @@ export const Container = styled.div`
     left: 66%;
     position: absolute;
     background-color: var(--main-color);
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 `;
 export const FirstColumn = styled.div`
@@ -24,6 +35,13 @@ export const FirstColumn = styled.div`
   position: relative;
   left: 80%;
   z-index: ${(props) => (props.animatioContent ? "-1" : "11")};
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    left: 0;
+    padding: 30px 0;
+    background-color: var(--main-color);
+  }
   p {
     font-size: 14px;
     font-weight: 300;
@@ -62,6 +80,12 @@ export const SecondColumn = styled.div`
   flex-direction: column;
   transition: 0.5s;
   z-index: ${(props) => (props.animatioContent ? "-1" : "7")};
+
+  @media (max-width: 1000px) {
+    left: 0;
+    height: 54%;
+    padding: 1% 0;
+  }
 
   h3 {
     font-size: 26px;
@@ -115,4 +139,8 @@ export const FormikForm = styled.form`
   width: 96%;
   height: 98%;
   position: relative;
+
+  @media (max-width: 1000px) {
+    height: 90%;
+  }
 `;

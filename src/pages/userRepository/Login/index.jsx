@@ -66,7 +66,7 @@ export default function Login() {
           Crie a sua conta agora!
         </p>
 
-        <style.LinkButton to="/cadastrar" onClick={handleCloseModal}>
+        <style.LinkButton to="/cadastrar/user" onClick={handleCloseModal}>
           Criar Conta
         </style.LinkButton>
       </style.FirstColumn>

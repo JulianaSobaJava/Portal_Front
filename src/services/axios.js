@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "./auth";
 
 export const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: "https://­app-portalapi.herokua­pp.com/",
 });
 
 api.interceptors.request.use(async (config) => {

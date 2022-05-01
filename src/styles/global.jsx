@@ -88,6 +88,12 @@ button{
   position:relative;
   padding:3rem;
   border-radius:0.2rem;
+
+   @media (max-width: 1000px) {
+
+    padding:0 1%;
+    height: 100%;
+  }
 }
 
 .react-modal-close{
@@ -98,6 +104,12 @@ button{
     top:1.5rem;
     background:transparent;
     transition: filter .2s;
+
+@media (max-width: 1000px) {
+   left:92%;
+   top:.8rem
+    
+  }
 
     &:hover{
         filter:brightness(0.1);

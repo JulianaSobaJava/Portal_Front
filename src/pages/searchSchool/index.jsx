@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Container from "../../components/container/index";
+import Container from "../../components/container";
 import Wrapper from "../../components/wrapper";
 import AsideFilter from "../../components/asideFilter";
 import GridView from "../../components/gridView";
@@ -7,10 +7,8 @@ import MapaView from "../../components/mapaView";
 import { schools } from "../../helpers/data/schools";
 import * as Icons from "react-icons/fa";
 import * as style from "./style";
-import NavBar from "../../components/navBar/index";
+import NavBar from "../../components/navBar";
 import Footer from "../../components/footer";
-
-// import { Container } from './styles';
 
 export default function SearchSchool() {
   const [click, setClick] = useState(true);

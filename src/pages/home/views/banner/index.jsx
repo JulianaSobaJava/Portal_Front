@@ -17,8 +17,8 @@ export default function Banner() {
               Visite-nos e descubra!
             </p>
             <S.ButtonGroup>
-              <S.LinkButton to="/cadastrar">Criar Conta</S.LinkButton>
-              <S.LinkButton to="/search">Pesquisar Escola</S.LinkButton>
+              <S.LinkButton to="/cadastrar/user">Criar Conta</S.LinkButton>
+              <S.LinkButton to="/schools">Pesquisar Escola</S.LinkButton>
             </S.ButtonGroup>
           </S.Text>
         </div>
@@ -33,8 +33,8 @@ export default function Banner() {
               Visite-nos e descubra!
             </p>
             <S.ButtonGroup>
-              <S.LinkButton to="/cadastrar">Criar Conta</S.LinkButton>
-              <S.LinkButton to="/search">Pesquisar Escola</S.LinkButton>
+              <S.LinkButton to="/cadastrar/user">Criar Conta</S.LinkButton>
+              <S.LinkButton to="/schools">Pesquisar Escola</S.LinkButton>
             </S.ButtonGroup>
           </S.Text>
         </div>
@@ -50,7 +50,7 @@ export default function Banner() {
               Visite-nos e descubra!
             </p>
             <S.ButtonGroup>
-              <S.LinkButton to="/cadastrar">Criar Conta</S.LinkButton>
+              <S.LinkButton to="/cadastrar/user">Criar Conta</S.LinkButton>
               <S.LinkButton to="/instructor">Fazer Teste</S.LinkButton>
             </S.ButtonGroup>
           </S.Text>
@@ -67,8 +67,8 @@ export default function Banner() {
               Visite-nos e descubra!
             </p>
             <S.ButtonGroup>
-              <S.LinkButton to="/cadastrar">Criar Conta</S.LinkButton>
-              <S.LinkButton to="/search">Pesquisar Escola</S.LinkButton>
+              <S.LinkButton to="/cadastrar/user">Criar Conta</S.LinkButton>
+              <S.LinkButton to="/school">Pesquisar Escola</S.LinkButton>
             </S.ButtonGroup>
           </S.Text>
         </div>
@@ -83,8 +83,8 @@ export default function Banner() {
               Visite-nos e descubra!
             </p>
             <S.ButtonGroup>
-              <S.LinkButton to="/cadastrar">Criar Conta </S.LinkButton>
-              <S.LinkButton to="/search">Pesquisar Escola</S.LinkButton>
+              <S.LinkButton to="/cadastrar/user">Criar Conta </S.LinkButton>
+              <S.LinkButton to="/school">Pesquisar Escola</S.LinkButton>
             </S.ButtonGroup>
           </S.Text>
         </div>

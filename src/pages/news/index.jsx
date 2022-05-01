@@ -73,7 +73,7 @@ export default function News() {
               <Post />
               <Post />
             </S.Postes>
-            <Loader />
+            {/* <Loader /> */}
           </S.Main>
         </S.Content>
       </Container>

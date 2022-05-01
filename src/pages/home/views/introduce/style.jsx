@@ -27,7 +27,11 @@ export const Post = styled.div`
   justify-content: center;
   background-color: var(--white-color);
   position: relative;
+  border: 1px solid var(--primaryColor);
 
+  img {
+    width: 100px;
+  }
   @media (max-width: 660px) {
     width: 400px;
     margin-bottom: 20px;

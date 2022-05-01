@@ -301,7 +301,7 @@ export default function Form({ show, handleShow }) {
               }}
             >
               <option value="" disabled selected hidden>
-                Selecione a munícipio...
+                Selecione o munícipio...
               </option>
               {municipe
                 .filter((data_) => data_.provinceId.id === idProvinces)
