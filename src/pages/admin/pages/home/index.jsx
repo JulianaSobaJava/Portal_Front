@@ -1,6 +1,12 @@
 import React from "react";
+import { Sidebar } from "../../components/sidebar";
 import * as S from "./style";
 
 export function AdminHome() {
-  return <S.Container>Admin Home</S.Container>;
+  return (
+    <>
+      <Sidebar />
+      <S.Container>Admin Home</S.Container>
+    </>
+  );
 }
