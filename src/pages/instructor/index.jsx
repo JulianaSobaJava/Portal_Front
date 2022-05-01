@@ -1,9 +1,9 @@
 import React from "react";
 import * as style from "./style";
-import Container from "../../components/container/index";
+import Container from "../../components/container";
 import Wrapper from "../../components/wrapper";
 import Footer from "../../components/footer";
-import NavBar from "../../components/navBar/index";
+import NavBar from "../../components/navBar";
 
 import Hexagono from "../../assets/image/Holland.gif";
 import Hexagono2 from "../../assets/image/Hexágono-2.jpg";

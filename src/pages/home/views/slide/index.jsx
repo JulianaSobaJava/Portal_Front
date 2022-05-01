@@ -10,6 +10,8 @@ export default function Slide() {
   const [school, setSchool] = useState([]);
   const [click, setClicked] = useState(false);
   const [query, setQuery] = useState("");
+
+  console.log(query);
   useEffect(() => {
     api
       .get("provinces")

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Header from "../../components/header/index";
 import Sidebar from "../../components/sidebar/index";
 import * as S from "../Profile/style";

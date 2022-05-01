@@ -8,7 +8,9 @@ export default function TesteUser() {
   const [type, setType] = useState(0);
   const [page, setPage] = useState(0);
 
-  function endTeste() {}
+  function endTeste() {
+    console.log(type);
+  }
 
   function showType(type) {
     switch (type) {

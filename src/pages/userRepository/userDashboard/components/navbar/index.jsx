@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { NavItems } from "./data/navItems";
 import styled from "styled-components";
 

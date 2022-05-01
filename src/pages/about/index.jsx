@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Faq from "../otherPages/faq/faq";
-import AboutContainer from "../otherPages/about/index";
+import AboutContainer from "../otherPages/about";
 import * as style from "./style";
-import Container from "../../components/container/index";
+import Container from "../../components/container";
 import WrapperContainer from "../../components/wrapper";
-import NavBar from "../../components/navBar/index";
+import NavBar from "../../components/navBar";
 import Footer from "../../components/footer";
 export default function About() {
   const [click, setClick] = useState(true);

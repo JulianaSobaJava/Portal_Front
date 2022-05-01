@@ -1,11 +1,11 @@
 import React from "react";
-import Container from "../../components/container/index";
+import Container from "../../components/container";
 import Wrapper from "../../components/wrapper";
 import * as S from "./style";
-import NavBar from "../../components/navBar/index";
+import NavBar from "../../components/navBar";
 import Footer from "../../components/footer";
 import image from "../../assets/image/slide1.jpg";
-import { Post } from "../../components/post/index";
+import { Post } from "../../components/post";
 // import { Loader } from "../../components/loader";
 
 export default function News() {

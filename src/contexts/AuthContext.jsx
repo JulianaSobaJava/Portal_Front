@@ -1,5 +1,5 @@
-import { createContext, useState, useEffect } from "react";
-import { Login, LogOut, recoverUserInformation } from "../services/auth";
+import { createContext, useState } from "react";
+import { Login, LogOut } from "../services/auth";
 import { api } from "../services/axios";
 
 export const AuthContext = createContext({});
