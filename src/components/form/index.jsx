@@ -78,8 +78,8 @@ export default function Form({ show, handleShow }) {
     let newEndereco;
     await api
       .post("endereco", {
-        provinceId: idProvinces,
-        municipioId: idMunicipe,
+        provincia_id: idProvinces,
+        municipio_id: idMunicipe,
         bairroId: bairroId,
       })
       .then((response) => {
