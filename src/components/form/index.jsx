@@ -57,7 +57,6 @@ export default function Form({ show, handleShow }) {
 
   const onSubmit = async (values) => {
     const { confirmPassword, ...dataUser } = values;
-    console.log("dataUser", dataUser);
 
     let bairro;
     await api
@@ -119,7 +118,7 @@ export default function Form({ show, handleShow }) {
     await api
       .post("contact", {
         descricao: await dataUser.telefone,
-        userId: await newUser.id,
+        userId: await newUser.result.id,
       })
       .then((response) => {
         console.log("novo conacto adicionado", response.data);
