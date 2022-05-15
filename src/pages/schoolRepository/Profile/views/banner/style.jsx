@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import image from "../../../../../assets/image/banner2.jpg";
 
 export const Container = styled.div`
   width: 100%;
@@ -18,8 +19,8 @@ export const Content = styled.div`
 `;
 
 export const ProfileFoto = styled.div`
-  width: 340px;
-  height: 340px;
+  width: 300px;
+  height: 300px;
   background-color: orange;
   border-radius: 3px;
 
@@ -32,11 +33,17 @@ export const ProfileFoto = styled.div`
 export const FotodeFundo = styled.div`
   width: 100%;
   height: 100%;
+  background-image: linear-gradient(rgba(4, 4, 20, 0.5), rgba(4, 4, 20, 0.5)),
+    url(${image});
+
+  background-repeat: no-repeat;
+  background-size: cover;
 
   img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+    position: relative;
   }
 `;
 export const Info = styled.div`
@@ -50,11 +57,13 @@ export const Info = styled.div`
   h1 {
     margin: 2% 0;
     color: #232332;
+    font-weight: 500;
   }
 
   p {
     font-size: 14px;
     color: #232332;
     line-height: 1.5;
+    font-weight: 300;
   }
 `;

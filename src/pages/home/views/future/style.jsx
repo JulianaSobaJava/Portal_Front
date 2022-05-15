@@ -5,10 +5,10 @@ export const FutureContainer = styled.section`
   width: 100%;
   height: 96vh;
   background-color: var(--main-color);
-  overflow-x: hidden;
 
   @media (max-width: 800px) {
     width: 100%;
+    overflow-x: hidden;
   }
 `;
 

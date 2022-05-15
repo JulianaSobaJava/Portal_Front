@@ -30,7 +30,7 @@ export const validationSchema = Yup.object().shape({
   dateBorn: Yup.string().required("Obrigatório").matches(),
   street: Yup.string()
     .required("Obrigatório")
-    .matches(/^[aA-zZ-Zà-úÀ-Ú\s]+$/, "Dados"),
+    .matches(/^[aA-zZ-Zà-úÀ-Ú\s]+$/, "Dados inválidos"),
 });
 
 export const sessionValidator = Yup.object().shape({

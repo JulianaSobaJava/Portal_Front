@@ -24,6 +24,7 @@ import EscolaEdit from "./pages/admin/pages/escolaRepository/data/escolaEdit";
 import SchoolProfile from "./pages/schoolRepository/Profile";
 
 import TesteUser from "./pages/instructor/teste";
+import Users from "./pages/admin/pages/users";
 
 export default function MainRoutes() {
   return (
@@ -39,13 +40,14 @@ export default function MainRoutes() {
       <Route path="/cadastrar/escola" element={<RegistrationSchool />} />
       <Route path="/login/escola" element={<SchoolLogin />} />
 
-      <Route path="/escola:id" element={<SchoolProfile />} />
+      <Route path="/escola/:id" element={<SchoolProfile />} />
       <Route path="/escola/dash" element={<h1>Olá </h1>} />
 
       <Route path="/admin/area" element={<AdminArea />} />
       <Route path="/admin/home" element={<AdminHome />} />
       <Route path="/admin/info" element={<AdminInfo />} />
       <Route path="/admin/pedidos" element={<Pedidos />} />
+      <Route path="/admin/users" element={<Users />} />
       <Route path="/admin/teste" element={<Teste />} />
       <Route path="/admin/teste/add" element={<TesteAdd />} />
       <Route path="/admin/teste/edit:id" element={<TesteEdit />} />

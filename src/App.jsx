@@ -4,6 +4,8 @@ import GlobalStyles from "./styles/global";
 import MainRoutes from "./routes";
 import { ModalProvider } from "./contexts/ModalContext";
 import { LoginModal } from "./components/modal";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 export default function App() {
   return (
@@ -11,6 +13,7 @@ export default function App() {
       <ModalProvider>
         <MainRoutes />
         <GlobalStyles />
+        <ToastContainer />
         <LoginModal />
       </ModalProvider>
     </Router>

@@ -13,6 +13,7 @@ import * as Icons from "react-icons/md";
 import { AiOutlineIdcard } from "react-icons/ai";
 import { api } from "../../services/axios";
 import { ModalContext } from "../../contexts/ModalContext";
+import { toast } from "react-toastify";
 
 const initialValues = {
   username: "",
@@ -65,12 +66,10 @@ export default function Form({ show, handleShow }) {
         municipioId: idMunicipe,
       })
       .then((response) => {
-        console.log("bairro", response.data);
         bairro = response.data;
       })
       .catch((err) => {
-        if (err && err.response)
-          console.log("Erro cadastrar o bairro:", err.response.data.message);
+        if (err && err.response) toast.error(err.response.data.message);
       });
     const bairroId = await bairro.id;
 
@@ -82,12 +81,9 @@ export default function Form({ show, handleShow }) {
         bairroId: bairroId,
       })
       .then((response) => {
-        console.log("endereco", response.data);
         newEndereco = response.data;
       })
-      .catch((error) => {
-        console.log("Erro cadastrar o endereco:", error);
-      });
+      .catch((error) => {});
     const enderecoId = await newEndereco.id;
 
     let newUser;
@@ -100,17 +96,16 @@ export default function Form({ show, handleShow }) {
         roleId: "aa2d0556-d182-4cb5-a33d-e97d4a374b92",
       })
       .then((response) => {
-        console.log("novo usuario", response.data);
         newUser = response.data;
       })
       .catch((err) => {
         if (err && !err?.response) {
-          console.log("Server Response");
+          toast.error("Sem resposta do servidor");
         } else if (err.response.status === 409) {
           console.log("Username taken");
         } else {
-          console.log("Registration Failed");
-          console.log("Erro cadastrar o user:", err.response.data.message);
+          toast.error("Falha ao cadastrar úsuario");
+          toast.error(err.response.data.message);
         }
       });
 
@@ -121,11 +116,10 @@ export default function Form({ show, handleShow }) {
         userId: await newUser.result.id,
       })
       .then((response) => {
-        console.log("novo conacto adicionado", response.data);
         newContacto = response.data;
       })
       .catch((error) => {
-        console.log("erro ao cadastrar o contacto:", error);
+        toast.error(error.response.message);
       });
 
     await api
@@ -134,10 +128,9 @@ export default function Form({ show, handleShow }) {
         contactId: await newContacto.id,
       })
       .then((response) => {
-        console.log("novo login adicionado", response.data);
         newContacto = response.data;
         formik.resetForm();
-        alert("Usuario Cadastrado com sucesso");
+        toast.success("Conta Criada");
         handleOpenModal();
       })
       .catch((error) => {
@@ -151,6 +144,7 @@ export default function Form({ show, handleShow }) {
     onSubmit,
     validationSchema: validationSchema,
   });
+
   return (
     <>
       <FormikForm onSubmit={formik.handleSubmit}>
@@ -303,6 +297,7 @@ export default function Form({ show, handleShow }) {
                 Selecione o munícipio...
               </option>
               {municipe
+                .sort()
                 .filter((data_) => data_.provinceId.id === idProvinces)
                 .map((data_) => (
                   <option key={data_.id} value={data_.id}>

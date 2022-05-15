@@ -35,18 +35,20 @@ export const GetUser = () =>
 // Eliminando dados do UserLogado
 export const RemoveUser = () => localStorage.removeItem("userLogado");
 
-export async function Login(data) {
+export async function Login({ contact, password }) {
   const response = await api
-    .post("session", data)
+    .post("session", { contact, password })
     .then((response) => {
       console.log(response.data);
-      toast.success("Login efectuado com sucesso 🔥");
+      toast.success("Login efectuado com sucesso");
+      UserLogado(response.data.user);
       localStorage.setItem("Token", response.data.token);
       token = response.data.token;
       return response.data;
     })
     .catch(({ response }) => {
       toast.error(response?.data?.error);
+      toast.error("Erro na validação de valores");
     });
 
   if (response) return response;
@@ -65,7 +67,8 @@ export async function LogOut() {
   await delay();
   try {
     localStorage.removeItem("Token");
-    toast.success("Sessão terminada 🔥");
+    localStorage.removeItem("userLogado");
+    toast.success("Sessão terminada");
   } catch (error) {
     toast.error("Erro ao terminar sessão!");
   }

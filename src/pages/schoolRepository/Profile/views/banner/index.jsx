@@ -1,15 +1,14 @@
 import React from "react";
 import * as s from "./style";
+import image from "../../../../../assets/image/IMIL.png";
 
 export function Banner() {
   return (
     <s.Container>
-      <s.FotodeFundo>
-        <img src="" alt="" />
-      </s.FotodeFundo>
+      <s.FotodeFundo></s.FotodeFundo>
       <s.Content>
         <s.ProfileFoto>
-          <img src="" alt="" />
+          <img src={image} alt="" />
         </s.ProfileFoto>
         <s.Info>
           <h1>Instituto Politécnico Industrial de Luanda</h1>

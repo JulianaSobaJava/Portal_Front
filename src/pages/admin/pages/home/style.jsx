@@ -3,7 +3,79 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
 `;
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-right: 20px;
+`;
+export const NavContent = styled.div`
+  width: 100%;
+  padding: 20px 30px;
+`;
+export const HomeContent = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const CardContent = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 
+  h4 {
+    font-weight: 500;
+  }
+`;
+
+export const CardContentChildren = styled.div`
+  width: 100%;
+  display: flex;
+  padding: 12px 6px;
+`;
+
+export const CardsContent = styled.div`
+  display: flex;
+  flex: 4;
+  margin-left: 20px;
+`;
+export const Card = styled.div`
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--main-color);
+  background-size: cover;
+  flex: 1;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+
+  h5 {
+    font-weight: 400;
+  }
+
+  div {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 4px 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      position: relative;
+    }
+  }
+  span {
+    font-size: 12px;
+  }
+`;
+export const ContentBody = styled.div`
+  display: flex;
+  margin-top: 40px;
+`;
 export const Widgets = styled.div`
   display: flex;
   padding: 20px;

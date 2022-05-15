@@ -20,14 +20,13 @@ const Post = styled.div`
     flex-wrap: nowrap;
     padding: 0 1%;
     overflow-x: scroll;
-    background-color: blue;
   }
 `;
 
 const PostContent = styled.div`
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 450px;
   height: 90%;
   padding: 0 2em;
   color: var(--black-color);

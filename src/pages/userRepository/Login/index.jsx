@@ -9,9 +9,10 @@ import {
 import * as Icons from "react-icons/md";
 import { sessionValidator } from "../../../validations/userValidation";
 import * as style from "./style";
-import { ModalContext } from "../../../contexts/ModalContext";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { toast } from "react-toastify";
+import { ModalContext } from "../../../contexts/ModalContext";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   contact: "",
@@ -21,27 +22,42 @@ const initialValues = {
 export default function Login() {
   const [show, setShow] = useState(false);
 
+  const { LoginRequest, isAuthenticated, user } = useContext(AuthContext);
   const { handleCloseModal } = React.useContext(ModalContext);
-  const { LoginRequest, isAuthenticated } = useContext(AuthContext);
+
+  let navigate = useNavigate();
 
   const handleShow = (e) => {
     e.preventDefault();
     setShow(!show);
   };
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      alert("Im logged");
-    }
-  }, [isAuthenticated]);
+  useEffect(() => {}, [isAuthenticated]);
 
   const onSubmit = async (values) => {
     const loadToast = toast.loading("Processando");
 
     if (values) {
-      console.log("dados de login", values);
       await LoginRequest(values);
-      handleCloseModal();
+      if (user) {
+        console.log("Authenticated");
+        handleCloseModal();
+
+        if (user.roleId.descricao) {
+          switch (user.roleId.descricao) {
+            case "Aluno":
+              return navigate("user/dashboard/perfil");
+            case "Gestor":
+              return navigate("escola/dash");
+            case "SuperAdmin":
+              return navigate("admin/home");
+            default:
+              return null;
+          }
+        }
+      }
+
+      console.log(values);
     }
     toast.dismiss(loadToast);
   };

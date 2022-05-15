@@ -7,7 +7,6 @@ const PostConatiner = styled.div`
   margin: 0px 25px 40px 25px;
   display: flex;
   flex-direction: column;
-  background: yellow;
 
   img {
     position: relative;

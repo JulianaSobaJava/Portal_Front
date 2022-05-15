@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../../../components/navBar";
 import { Banner } from "./views/banner";
 import Container from "../../../components/container/index";
@@ -9,15 +9,19 @@ import Organograma from "./views/organograma";
 import Cursos from "./views/cursos";
 import Galery from "./views/galery";
 import Matricula from "./views/others";
+import Info from "./views/info";
 
 export default function SchoolProfile() {
-  //   function increment(i, max) {
-  //     if (i > max) return;
-  //     setTimeout(function () {
-  //       increment(i + 1, max);
-  //     }, 20);
-  //   }
-  //   increment(0, 5000);
+  function Increment(i, max) {
+    if (i > max) return;
+    setTimeout(function () {
+      Increment(i + 1, max);
+    }, 20);
+  }
+  useEffect(() => {
+    console.log(Increment(0, 200));
+  }, []);
+
   return (
     <div>
       <NavBar />
@@ -25,13 +29,14 @@ export default function SchoolProfile() {
       <Container>
         <Content>
           <Main>
+            <History />
+            <Info />
+
             <Numbers>
-              <span>5.000 alunos</span>
+              <span> alunos</span>
               <span>1000 professores</span>
               <span>15 professores</span>
             </Numbers>
-
-            <History />
             <Organograma />
             <Cursos />
             <Galery />

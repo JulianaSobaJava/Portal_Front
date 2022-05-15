@@ -7,15 +7,7 @@ export const AuthContext = createContext({});
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
-  const isAuthenticated = !!user;
-
-  const navigate = null;
-  // useEffect(() => {
-
-  //   if(token){
-  //     recoverUserInformation().then(response =>setUser(response));
-  //   }
-  // })
+  const isAuthenticated = user;
 
   async function LoginRequest({ contact, password }) {
     setLoading(true);
@@ -27,20 +19,6 @@ export const AuthProvider = ({ children }) => {
     }
 
     const { token, user } = response;
-    api.defaults.headers.common.Authorization = `Bearer ${token}`;
-    setUser(user);
-    const { role } = user.roleId;
-
-    switch (role) {
-      case "Aluno":
-        return navigate("/");
-      case "Gestor":
-        return navigate("/school/admin/");
-      case "SuperAdmin":
-        return navigate("/dashboard/");
-      default:
-        return null;
-    }
   }
 
   async function LogOutRequest() {
@@ -52,7 +30,6 @@ export const AuthProvider = ({ children }) => {
     }
     setUser(null);
     setLoading(false);
-    // navigate("/");
   }
 
   return (

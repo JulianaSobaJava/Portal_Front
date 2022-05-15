@@ -22,9 +22,9 @@ export const Numbers = styled.div`
   margin-bottom: 20px;
 
   span {
-    margin: 0 14px;
-    width: 240px;
-    height: 240px;
+    margin: 0 30px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 8px solid var(--main-color);
     display: flex;
@@ -33,7 +33,6 @@ export const Numbers = styled.div`
   }
 `;
 export const Aditional = styled.div`
-  background-color: yellow;
   margin: 30px 0 0;
   display: flex;
   flex-direction: column;
